@@ -1,0 +1,21 @@
+{
+  "name": "creatory/pro",
+  "keywords": [
+    "Docker",
+    "Browsershot"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Creatory PRO",
+      "email": "creatory.pro@yandex.ru"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "spatie/browsershot": "^3.57"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
