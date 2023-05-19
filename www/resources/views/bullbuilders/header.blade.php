@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ $title ?? config('app.name', 'Argon Dashboard') }}</title>`
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/animate.css">
+
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/flaticon.css">
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/icomoon.css">
+    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/style.css">
+</head>
+<body>
+
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            <a class="navbar-brand" href="index.html">Home<span>builder.</span></a>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <div class="social-media">
+                <p class="mb-0 d-flex">
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@include('bullbuilders.navbar')
+
+@include('bullbuilders.slider')
+
+@yield('content')
+
+@include('bullbuilders.footer')
+
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/popper.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/bootstrap.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.easing.1.3.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.waypoints.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.stellar.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.animateNumber.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/owl.carousel.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/jquery.magnific-popup.min.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/google-map.js"></script>
+<script src="{{ asset('argon') }}/bullbuilders/js/main.js"></script>
+
+</body>
+</html>
+
