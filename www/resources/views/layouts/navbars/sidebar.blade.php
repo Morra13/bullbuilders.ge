@@ -1,6 +1,7 @@
-{{-- TODO Меню слева--}}
-{{--<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">--}}
-<nav class="navbar navbar-vertical fixed-left navbar-light bg-white" id="sidenav-main">
+{{-- TODO Меню слева --}}
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+{{-- TODO Меню сверху --}}
+{{--<nav class="navbar navbar-vertical fixed-left navbar-light bg-white" id="sidenav-main">--}}
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

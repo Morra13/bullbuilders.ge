@@ -26,7 +26,7 @@
 <div class="container pt-5">
     <div class="row justify-content-between">
         <div class="col">
-            <a class="navbar-brand" href="index.html">Home<span>builder.</span></a>
+            <a class="navbar-brand" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span>builders.</span></a>
         </div>
         <div class="col d-flex justify-content-end">
             <div class="social-media">

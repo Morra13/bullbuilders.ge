@@ -13,6 +13,11 @@ class EnumControllerRu extends Controller
     const MENU = 'Меню';
 
     /**
+     * Меню
+     */
+    const ADMIN = 'Админ';
+
+    /**
      * Главная страница
      */
     const MAIN = 'Главная страница';

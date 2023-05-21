@@ -14,6 +14,7 @@ use App\Http\Controllers\OffsController;
 use App\Http\Controllers\ReturnGoodsController;
 use App\Http\Controllers\AmadoController;
 use App\Http\Controllers\BullbuildersController;
+use App\Http\Controllers\AdminCotroller;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -99,5 +100,9 @@ Route::group(
         Route::get('/instruction/admin/list', [InstructionController::class, 'adminList'])->name(InstructionController::ROUTE_ADMIN_LIST);
         Route::get('/transaction/admin/list', [TransactionController::class, 'adminList'])->name(TransactionController::ROUTE_ADMIN_LIST);
         Route::get('/settings/admin/index',   [SettingsController::class, 'adminIndex']  )->name(SettingsController::ROUTE_ADMIN_INDEX);
+
+        Route::get('/admin',                  [AdminCotroller::class, 'admin']           )->name(AdminCotroller::ROUTE_ADMIN);
+        Route::get('/admin/user/{id}',        [AdminCotroller::class, 'userRoleUpdate']  )->name(AdminCotroller::ROUTE_USER_ROLE_UPDATE);
+
     }
 );
