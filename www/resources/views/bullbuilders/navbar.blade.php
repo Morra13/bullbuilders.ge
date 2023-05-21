@@ -2,22 +2,58 @@
     <div class="container">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span> Menu
+            <span class="fa fa-bars"></span> {{$obEnum::MENU}}
         </button>
-        <form action="#" class="searchform order-lg-last">
-            <div class="form-group d-flex">
-                <input type="text" class="form-control pl-3" placeholder="Search">
-                <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
-            </div>
-        </form>
+{{--        <form action="#" class="searchform order-lg-last">--}}
+{{--            <div class="form-group d-flex">--}}
+{{--                <input type="text" class="form-control pl-3" placeholder="Search">--}}
+{{--                <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>--}}
+{{--            </div>--}}
+{{--        </form>--}}
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="team.html" class="nav-link">Our team</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                @if($page == 'main')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">{{$obEnum::MAIN}}</a>
+                </li>
+                @if($page == 'about')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_ABOUT) }}">{{$obEnum::ABOUT}}</a>
+                </li>
+                @if($page == 'partners')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PARTNERS) }}">{{$obEnum::PARTNERS}}</a>
+                </li>
+                @if($page == 'products')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PRODUCTS) }}">{{$obEnum::PRODUCTS}}</a>
+                </li>
+                @if($page == 'projects')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PROJECTS) }}">{{$obEnum::PROJECTS}}</a>
+                </li>
+                @if($page == 'contact')
+                    <li class="nav-item active">
+                    @else
+                    <li class="nav-item">
+                @endif
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_CONTACT) }}">{{$obEnum::CONTACT}}</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -42,8 +42,6 @@
 </div>
 @include('bullbuilders.navbar')
 
-@include('bullbuilders.slider')
-
 @yield('content')
 
 @include('bullbuilders.footer')

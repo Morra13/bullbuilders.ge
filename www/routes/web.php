@@ -13,6 +13,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OffsController;
 use App\Http\Controllers\ReturnGoodsController;
 use App\Http\Controllers\AmadoController;
+use App\Http\Controllers\BullbuildersController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/',                         [PublicController::class, 'index']           )->name(PublicController::ROUTE_INDEX);
+
+Route::get('/about',                    [BullbuildersController::class, 'about']     )->name(BullbuildersController::ROUTE_ABOUT);
+Route::get('/partners',                 [BullbuildersController::class, 'partners']  )->name(BullbuildersController::ROUTE_PARTNERS);
+Route::get('/products',                 [BullbuildersController::class, 'products']  )->name(BullbuildersController::ROUTE_PRODUCTS);
+Route::get('/projects',                 [BullbuildersController::class, 'projects']  )->name(BullbuildersController::ROUTE_PROJECTS);
+Route::get('/contact',                  [BullbuildersController::class, 'contact']   )->name(BullbuildersController::ROUTE_CONTACT);
+
 
 Route::get('/amado/about',              [AmadoController::class, 'about']            )->name(AmadoController::ROUTE_ABOUT);
 Route::get('/amado/product',            [AmadoController::class, 'product']          )->name(AmadoController::ROUTE_PRODUCT);

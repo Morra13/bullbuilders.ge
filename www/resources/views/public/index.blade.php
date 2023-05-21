@@ -5,6 +5,8 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getLang();
 
 @section('content')
 
+    @include('bullbuilders.slider')
+
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
             <div class="row">

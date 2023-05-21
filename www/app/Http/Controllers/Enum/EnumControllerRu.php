@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class EnumControllerRu extends Controller
 {
     /**
+     * Меню
+     */
+    const MENU = 'Меню';
+
+    /**
      * Главная страница
      */
     const MAIN = 'Главная страница';
@@ -18,9 +23,24 @@ class EnumControllerRu extends Controller
     const ABOUT = 'О нас';
 
     /**
-     * Продукты
+     * Наши партнеры
      */
-    const PRODUCTS = 'Продукты';
+    const PARTNERS = 'Наши партнеры';
+
+    /**
+     * Наши продукты
+     */
+    const PRODUCTS = 'Наши продукты';
+
+    /**
+     * Наши проекты
+     */
+    const PROJECTS = 'Наши проекты';
+
+    /**
+     * Связаться с нами
+     */
+    const CONTACT = 'Связаться с нами';
 
     /**
      * Корзина
