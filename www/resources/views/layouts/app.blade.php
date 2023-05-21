@@ -75,34 +75,5 @@
             })
         </script>
 
-{{--        <script type="text/javascript">--}}
-{{--            document.addEventListener('DOMContentLoaded', () => {--}}
-{{--                const inputElement = document.getElementById('price',)--}}
-{{--                const maskOptions = {--}}
-{{--                    mask: Number,--}}
-{{--                }--}}
-{{--                IMask(inputElement, maskOptions);--}}
-{{--            })--}}
-{{--        </script>--}}
-
-{{--        <script type="text/javascript">--}}
-{{--            document.addEventListener('DOMContentLoaded', () => {--}}
-{{--                const inputElement = document.getElementById('taken')--}}
-{{--                const maskOptions = {--}}
-{{--                    mask: Number,--}}
-{{--                }--}}
-{{--                IMask(inputElement, maskOptions);--}}
-{{--            })--}}
-{{--        </script>--}}
-
-{{--        <script type="text/javascript">--}}
-{{--            document.addEventListener('DOMContentLoaded', () => {--}}
-{{--                const inputElement = document.getElementById('qty')--}}
-{{--                const maskOptions = {--}}
-{{--                    mask: Number,--}}
-{{--                }--}}
-{{--                IMask(inputElement, maskOptions);--}}
-{{--            })--}}
-{{--        </script>--}}
     </body>
 </html>

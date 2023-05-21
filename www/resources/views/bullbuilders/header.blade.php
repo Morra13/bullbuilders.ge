@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>{{ $title ?? config('app.name', 'Argon Dashboard') }}</title>`
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{{ $title ?? config('app.name', 'Argon Dashboard') }}</title>`
 
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/animate.css">
+        <link type="image/png" sizes="16x16" rel="icon" href="{{ asset('argon') }}/img/favicon/r16.png">
+        <link type="image/png" sizes="32x32" rel="icon" href={{ asset('argon') }}/img/favicon/r32.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="{{ asset('argon') }}/img/favicon/r96.png">
+        <link type="image/png" sizes="120x120" rel="icon" href="{{ asset('argon') }}/img/favicon/r120.png">
 
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/magnific-popup.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/flaticon.css">
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/icomoon.css">
-    <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/style.css">
-</head>
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/animate.css">
+
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/magnific-popup.css">
+
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/ionicons.min.css">
+
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/flaticon.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/icomoon.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/style.css">
+    </head>
 <body>
 
 <div class="container pt-5">
     <div class="row justify-content-between">
         <div class="col">
-            <a class="navbar-brand" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span>builders.</span></a>
+            <a class="navbar-brand pt-0" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">
+                <img src="{{ asset('argon') }}/img/brand/logo_1.png" class="navbar-brand-img" alt="...">
+            </a>
+        </div>
+        <div class="center">
+            <a class="navbar-brand center" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span>builders.</span>
+            </a>
         </div>
         <div class="col d-flex justify-content-end">
             <div class="social-media">
