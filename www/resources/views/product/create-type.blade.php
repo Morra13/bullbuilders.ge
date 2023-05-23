@@ -1,6 +1,3 @@
-<?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
-?>
 @extends('layouts.app', ['title' => __($obEnum::CREATE_NEW_CATEGORY) ])
 
 @section('content')

@@ -47,7 +47,6 @@ class ProductController extends Controller
 
         $obTypes = (new Type())->all();
         foreach ($obTypes as $value) {
-            LangController::lang();
 
             if ($_REQUEST['lang'] == 'ru') {
                 $name = $value['nameRu'];
@@ -77,7 +76,6 @@ class ProductController extends Controller
 
         $obTypes = (new Type())->all();
         foreach ($obTypes as $value) {
-            LangController::lang();
 
             if ($_REQUEST['lang'] == 'ru') {
                 $name = $value['nameRu'];

@@ -1,7 +1,4 @@
-<?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
-?>
-@extends('layouts.app', ['title' => __($obEnum::CREATE_NEW_PRODUCT)])
+@extends('layouts.app', ['title' => __('create new product')])
 
 @section('content')
     <div class="header pb-8 pt-5 d-flex align-items-center" style="background-image: url(../argon/img/theme/instagram-1.jpg); background-size: cover; background-position: center top;">
@@ -11,7 +8,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-white">{{ __($obEnum::CREATE_NEW_PRODUCT) }}</h1>
+                    <h1 class="text-white">{{ __('создать новый продук') }}</h1>
                 </div>
             </div>
         </div>
@@ -51,7 +48,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                     <div class="input-group mb-3">
                                         <div class="dropdown center">
                                             <select name="category_id" class="btn btn-secondary dropdown-toggle alert-primary"  required>
-                                                <option name="category_id" value="" class="badge-danger"> {{ __($obEnum::SELECT_CATEGORY) }}</option>
+                                                <option name="category_id" value="" class="badge-danger"> {{ __('выберите категорию') }}</option>
                                                 @foreach($arTypes as $value)
                                                 <option value="{{$value['id']}}">{{$value['name']}}</option>
                                                 @endforeach
@@ -59,13 +56,13 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         </div>
                                     </div>
                                     <div class="form-group{{ $errors->has('nameGe') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-name">{{ __($obEnum::NAME . '(GE)') }}</label>
+                                        <label class="form-control-label" for="input-name">{{ __('имя (GE)') }}</label>
                                         <input
                                             type="text"
                                             name="nameGe"
                                             id="input-name"
                                             class="form-control form-control-alternative{{ $errors->has('nameGe') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __($obEnum::NAME . '(GE)') }}"
+                                            placeholder="{{ __('имя (GE)') }}"
                                             required
                                         >
                                         @if ($errors->has('nameGe'))
@@ -75,13 +72,13 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         @endif
                                     </div>
                                     <div class="form-group{{ $errors->has('nameRu') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-name">{{ __($obEnum::NAME . '(RU)') }}</label>
+                                        <label class="form-control-label" for="input-name">{{ __('имя(RU)') }}</label>
                                         <input
                                             type="text"
                                             name="nameRu"
                                             id="input-name"
                                             class="form-control form-control-alternative{{ $errors->has('nameRu') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __($obEnum::NAME . '(RU)') }}"
+                                            placeholder="{{ __('имя (RU)') }}"
 
                                         >
                                         @if ($errors->has('nameRu'))
@@ -91,13 +88,13 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         @endif
                                     </div>
                                     <div class="form-group{{ $errors->has('nameEng') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-name">{{ __($obEnum::NAME . '(ENG)') }}</label>
+                                        <label class="form-control-label" for="input-name">{{ __('имя(ENG)') }}</label>
                                         <input
                                             type="text"
                                             name="nameEng"
                                             id="input-name"
                                             class="form-control form-control-alternative{{ $errors->has('nameEng') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __($obEnum::NAME . '(ENG)') }}"
+                                            placeholder="{{ __('имя (ENG)') }}"
 
                                         >
                                         @if ($errors->has('nameEng'))
@@ -107,13 +104,13 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         @endif
                                     </div>
                                     <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="price">{{ __($obEnum::PRICE . '₾') }}</label>
+                                        <label class="form-control-label" for="price">{{ __('цена₾') }}</label>
                                         <input
                                             type="text"
                                             name="price"
                                             id="price"
                                             class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __($obEnum::PRICE) }}"
+                                            placeholder="{{ __('цена') }}"
                                             required
                                         >
 
@@ -124,13 +121,13 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         @endif
                                     </div>
                                     <div class="form-group{{ $errors->has('code0') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="price">{{ __($obEnum::BARCODE) }}</label>
+                                        <label class="form-control-label" for="price">{{ __('barcode') }}</label>
                                         <input
                                             type="text"
                                             name="code0"
                                             id="price"
                                             class="form-control form-control-alternative{{ $errors->has('code0') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __($obEnum::BARCODE) }}"
+                                            placeholder="{{ __('barcode') }}"
                                             required
                                         >
 
@@ -141,7 +138,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         @endif
                                     </div>
                                     <div id="input0"></div>
-                                    <div class="btn btn-creatory mt-4" onclick="addInput()">{{ __('+ ' . $obEnum::BARCODE) }}</div>
+                                    <div class="btn btn-creatory mt-4" onclick="addInput()">{{ __('+ barcode' ) }}</div>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +148,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                     <div class="card bg-secondary shadow" style="min-height: 700px;">
                         <div class="card-header bg-white border-0">
                             <div class="row align-items-center">
-                                <h3 class="mb-0">{{ __($obEnum::DESCRIPTION) }}</h3>
+                                <h3 class="mb-0">{{ __('description') }}</h3>
                             </div>
                         </div>
                         <div class="card-body bg-white">
@@ -162,7 +159,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                     class="form-control form-control-alternative{{ $errors->has('descriptionGe') ? ' is-invalid' : '' }}"
                                     rows="5"
                                     required
-                                    placeholder="{{ __($obEnum::DESCRIPTION . ' (GE)') }}"
+                                    placeholder="{{ __(' DESCRIPTION(GE)') }}"
                                 ></textarea>
 
                                 @if ($errors->has('descriptionGe'))
@@ -177,7 +174,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                     id="descriptionRu"
                                     class="form-control form-control-alternative{{ $errors->has('descriptionRu') ? ' is-invalid' : '' }}"
                                     rows="5"
-                                    placeholder="{{ __($obEnum::DESCRIPTION . ' (RU)') }}"
+                                    placeholder="{{ __('DESCRIPTION (RU)') }}"
                                 ></textarea>
 
                                 @if ($errors->has('descriptionRu'))
@@ -192,7 +189,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                     id="descriptionEng"
                                     class="form-control form-control-alternative{{ $errors->has('descriptionEng') ? ' is-invalid' : '' }}"
                                     rows="5"
-                                    placeholder="{{ __($obEnum::DESCRIPTION . ' (ENG)') }}"
+                                    placeholder="{{ __('DESCRIPTION (ENG)') }}"
                                 ></textarea>
 
                                 @if ($errors->has('descriptionEng'))
@@ -208,8 +205,8 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         <img id="more_img_show_0" src="{{ asset('storage') . '/uploads/defaultUploadImg.png' }}" class="rounded">
                                     </div>
                                     <div class="col-6">
-                                        <label for="more_img_0" class="btn btn-creatory">{{ __($obEnum::SELECT_FILE) }}</label>
-                                        <label for="clear_0" class="btn btn-creatory">{{ __($obEnum::CLEAR) }}</label>
+                                        <label for="more_img_0" class="btn btn-creatory">{{ __('secet file') }}</label>
+                                        <label for="clear_0" class="btn btn-creatory">{{ __('clear') }}</label>
                                         <input hidden name="clear_0" id="clear_0">
                                     </div>
                                 </div>
@@ -226,8 +223,8 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         <img id="more_img_show_1" src="{{ asset('storage') . '/uploads/defaultUploadImg.png' }}" class="rounded">
                                     </div>
                                     <div class="col-6">
-                                        <label for="more_img_1" class="btn btn-creatory">{{ __($obEnum::SELECT_FILE) }}</label>
-                                        <label for="clear_1" class="btn btn-creatory">{{ __($obEnum::CLEAR) }}</label>
+                                        <label for="more_img_1" class="btn btn-creatory">{{ __('select file') }}</label>
+                                        <label for="clear_1" class="btn btn-creatory">{{ __('clear') }}</label>
                                         <input hidden name="clear_1" id="clear_1">
                                     </div>
                                 </div>
@@ -244,8 +241,8 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                         <img id="more_img_show_2" src="{{ asset('storage') . '/uploads/defaultUploadImg.png' }}" class="rounded">
                                     </div>
                                     <div class="col-6">
-                                        <label for="more_img_2" class="btn btn-creatory">{{ __($obEnum::SELECT_FILE) }}</label>
-                                        <label for="clear_2" class="btn btn-creatory">{{ __($obEnum::CLEAR) }}</label>
+                                        <label for="more_img_2" class="btn btn-creatory">{{ __('select file') }}</label>
+                                        <label for="clear_2" class="btn btn-creatory">{{ __('clear') }}</label>
                                         <input hidden name="clear_2" id="clear_2">
                                     </div>
                                 </div>
@@ -258,11 +255,11 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
                                     accept=".jpg,.jpeg,.png"
                                 />
                             </div>
-                            <div id="showMoreButton" class="btn btn-creatory mt-4 d-block" onclick="showMoreImg('more_img_div')">{{ __($obEnum::ADD_MORE_PHOTO) }}</div>
+                            <div id="showMoreButton" class="btn btn-creatory mt-4 d-block" onclick="showMoreImg('more_img_div')">{{ __('add more photo') }}</div>
 
                             <div class="card-body bg-white">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-creatory mt-4">{{ __($obEnum::CREATE) }}</button>
+                                    <button type="submit" class="btn btn-creatory mt-4">{{ __('create') }}</button>
                                 </div>
                             </div>
                         </div>
@@ -307,17 +304,17 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
             {
                 if(x.style.display == "none") {
                     x.style.display = "block";
-                    showMoreButton.innerHTML = "{{ __($obEnum::HIDE) }}";
+                    showMoreButton.innerHTML = "{{ __('hide') }}";
                 } else {
                     x.style.display = "none";
-                    showMoreButton.innerHTML = "{{ __($obEnum::ADD_MORE_PHOTO) }}";
+                    showMoreButton.innerHTML = "{{ __('add more photo') }}";
                 }
             }
         }
 
         var x = 0;
         function addInput() {
-            var code = '<input type="text" class="form-control form-control-alternative" placeholder="{{ __($obEnum::BARCODE) }}" name="code' + (x+1) +'" > <div id="input' + (x + 1) + '"></div>';
+            var code = '<input type="text" class="form-control form-control-alternative" placeholder="{{ __('barcode') }}" name="code' + (x+1) +'" > <div id="input' + (x + 1) + '"></div>';
             document.getElementById('input' + x).innerHTML = code;
             x++;
             var codeCount = '<input type="hidden" name="codeCount" value="'+ x +'"> ';

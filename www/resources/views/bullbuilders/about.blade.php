@@ -1,7 +1,4 @@
-<?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
-?>
-@extends('bullbuilders.header', ['title' => __($obEnum::ABOUT)])
+@extends('bullbuilders.header', ['title' => __('about.about')])
 
 @section('content')
 
@@ -10,7 +7,7 @@ $obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
         <div class="container">
             <div class="row no-gutters slider-text align-items-end">
                 <div class="col-md-9 ftco-animate pb-5">
-                    <h1 class="mb-0 bread">{{ __($obEnum::ABOUT) }}</h1>
+                    <h1 class="mb-0 bread">{{__( 'about.about' )}}</h1>
                 </div>
             </div>
         </div>

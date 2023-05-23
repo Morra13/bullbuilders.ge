@@ -1,7 +1,4 @@
-<?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
-?>
-@extends('bullbuilders.header', ['title' => __($obEnum::PRODUCTS)])
+@extends('bullbuilders.header', ['title' => __('nav.products')])
 
 @section('content')
 

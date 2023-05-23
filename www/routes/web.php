@@ -12,7 +12,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OffsController;
 use App\Http\Controllers\ReturnGoodsController;
-use App\Http\Controllers\AmadoController;
 use App\Http\Controllers\BullbuildersController;
 use App\Http\Controllers\AdminCotroller;
 
@@ -40,11 +39,6 @@ Route::group(
         Route::get('/changeLang/{lang}',        [PublicController::class, 'changeLang']      )->name(PublicController::ROUTE_CHANGE_LANG);
     }
 );
-
-Route::get('/amado/about',              [AmadoController::class, 'about']            )->name(AmadoController::ROUTE_ABOUT);
-Route::get('/amado/product',            [AmadoController::class, 'product']          )->name(AmadoController::ROUTE_PRODUCT);
-Route::get('/amado/productDetail',      [AmadoController::class, 'productDetail']    )->name(AmadoController::ROUTE_PRODUCT_DETAIL);
-Route::get('/amado/basket',             [AmadoController::class, 'basket']           )->name(AmadoController::ROUTE_BASKET);
 
 Route::get('/how-it-work',              [PublicController::class, 'howItWork']       )->name(PublicController::ROUTE_HOW_IT_WORK);
 Route::get('/policy',                   [PublicController::class, 'policy']          )->name(PublicController::ROUTE_POLICY);
