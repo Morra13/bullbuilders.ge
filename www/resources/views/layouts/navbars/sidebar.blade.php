@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand pt-0" href="/">
-            <img src="{{ asset('argon') }}/img/brand/logo_4.png" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('argon') }}/img/brand/logo_1.png" class="navbar-brand-img" alt="...">
         </a>
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
@@ -47,35 +47,33 @@
                     </div>
                 </div>
             </div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PublicController::ROUTE_BOX ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_BOX) }}">
-                        <i class="ni ni-app {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PublicController::ROUTE_BOX ? 'text-danger' : 'text-primary' }}"></i> {{ __('მთავარი გვერდი') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OrderController::ROUTE_ORDERS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\OrderController::ROUTE_ORDERS) }}">
-                        <i class="ni ni-cart {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OrderController::ROUTE_ORDERS ? 'text-danger' : 'text-primary' }}"></i> {{ __('გაყიდვების ნახვა') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_DEBTORS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductController::ROUTE_DEBTORS) }}">
-                        <i class="ni ni-fat-delete {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_DEBTORS ? 'text-danger' : 'text-primary' }}"></i> {{ __('ნისიების ნახვა') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN) }}">
-                        <i class="ni ni-curved-next {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN ? 'text-danger' : 'text-primary' }}"></i> {{ __('პროდუქციის დაბრუნება') }}
-                    </a>
-                </li>
-            </ul>
+{{--            <ul class="navbar-nav">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PublicController::ROUTE_BOX ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_BOX) }}">--}}
+{{--                        <i class="ni ni-app {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PublicController::ROUTE_BOX ? 'text-danger' : 'text-primary' }}"></i> {{ __('მთავარი გვერდი') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OrderController::ROUTE_ORDERS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\OrderController::ROUTE_ORDERS) }}">--}}
+{{--                        <i class="ni ni-cart {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OrderController::ROUTE_ORDERS ? 'text-danger' : 'text-primary' }}"></i> {{ __('გაყიდვების ნახვა') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_DEBTORS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductController::ROUTE_DEBTORS) }}">--}}
+{{--                        <i class="ni ni-fat-delete {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_DEBTORS ? 'text-danger' : 'text-primary' }}"></i> {{ __('ნისიების ნახვა') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN) }}">--}}
+{{--                        <i class="ni ni-curved-next {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN ? 'text-danger' : 'text-primary' }}"></i> {{ __('პროდუქციის დაბრუნება') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
             @if(auth()->user()->isAdmin())
-                <hr class="my-3">
-                <h6 class="navbar-heading text-muted">Admin</h6>
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_REMAINS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductController::ROUTE_REMAINS) }}">
-                            <i class="ni ni-archive-2 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_REMAINS ? 'text-danger' : 'text-primary' }}"></i> {{ __('დარჩენილი რაოდენობა ') }}
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_ADMIN ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\AdminCotroller::ROUTE_ADMIN) }}">
+                            <i class="ni ni-archive-2 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_ADMIN ? 'text-danger' : 'text-primary' }}"></i> {{ __(' Пользователи ') }}
                         </a>
                     </li>
                     <li class="nav-item">
