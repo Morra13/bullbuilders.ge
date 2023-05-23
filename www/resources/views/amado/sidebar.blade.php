@@ -1,5 +1,5 @@
 <?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getLang();
+$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
 ?>
 
 <!--  Всплывающее меню для пойска  -->

@@ -1,5 +1,5 @@
 <?
-$obEnum = (new \App\Http\Controllers\Enum\LangController())::getLang();
+$obEnum = (new \App\Http\Controllers\Enum\LangController())::getEnum();
 ?>
 {{--<section class="newsletter-area section-padding-100-0">--}}
 {{--    <div class="container">--}}
