@@ -3,8 +3,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Basket;
 use App\Models\Debtors;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\App;
 
 /**
  * Class PublicController
@@ -26,6 +28,9 @@ class PublicController extends Controller
 
     /** @var string  */
     const ROUTE_COOKIE      = 'public.cookie';
+
+    /** @var string  */
+    const ROUTE_CHANGE_LANG        = 'public.changeLang';
 
     /**
      * How its work page
@@ -90,5 +95,19 @@ class PublicController extends Controller
     public function cookie()
     {
         return view('public.cookie');
+    }
+
+    /**
+     * Изменение языка
+     *
+     * @param $lang
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function changeLang($lang)
+    {
+        session(['lang' => $lang]);
+        App::setLocale($lang);
+
+        return redirect()->back();
     }
 }

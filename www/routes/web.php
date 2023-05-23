@@ -28,14 +28,18 @@ use Illuminate\Support\Facades\Route;
 // Register the typical authentication routes for an application.
 Auth::routes();
 
-Route::get('/',                         [PublicController::class, 'index']           )->name(PublicController::ROUTE_INDEX);
-
-Route::get('/about',                    [BullbuildersController::class, 'about']     )->name(BullbuildersController::ROUTE_ABOUT);
-Route::get('/partners',                 [BullbuildersController::class, 'partners']  )->name(BullbuildersController::ROUTE_PARTNERS);
-Route::get('/products',                 [BullbuildersController::class, 'products']  )->name(BullbuildersController::ROUTE_PRODUCTS);
-Route::get('/projects',                 [BullbuildersController::class, 'projects']  )->name(BullbuildersController::ROUTE_PROJECTS);
-Route::get('/contact',                  [BullbuildersController::class, 'contact']   )->name(BullbuildersController::ROUTE_CONTACT);
-
+Route::group(
+    ['middleware' => 'set.lang'],
+    function () {
+        Route::get('/',                         [PublicController::class, 'index']           )->name(PublicController::ROUTE_INDEX);
+        Route::get('/about',                    [BullbuildersController::class, 'about']     )->name(BullbuildersController::ROUTE_ABOUT);
+        Route::get('/partners',                 [BullbuildersController::class, 'partners']  )->name(BullbuildersController::ROUTE_PARTNERS);
+        Route::get('/products',                 [BullbuildersController::class, 'products']  )->name(BullbuildersController::ROUTE_PRODUCTS);
+        Route::get('/projects',                 [BullbuildersController::class, 'projects']  )->name(BullbuildersController::ROUTE_PROJECTS);
+        Route::get('/contact',                  [BullbuildersController::class, 'contact']   )->name(BullbuildersController::ROUTE_CONTACT);
+        Route::get('/changeLang/{lang}',        [PublicController::class, 'changeLang']      )->name(PublicController::ROUTE_CHANGE_LANG);
+    }
+);
 
 Route::get('/amado/about',              [AmadoController::class, 'about']            )->name(AmadoController::ROUTE_ABOUT);
 Route::get('/amado/product',            [AmadoController::class, 'product']          )->name(AmadoController::ROUTE_PRODUCT);
