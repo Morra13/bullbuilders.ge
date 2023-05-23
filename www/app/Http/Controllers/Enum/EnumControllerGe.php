@@ -8,9 +8,19 @@ use Illuminate\Http\Request;
 class EnumControllerGe extends Controller
 {
     /**
+     * Меню
+     */
+    const MENU = 'Меню Ge';
+
+    /**
+     * Меню
+     */
+    const ADMIN = 'Админ';
+
+    /**
      * Главная страница
      */
-    const MAIN = 'მთავარი გვერდი';
+    const MAIN = 'Главная страница Ge';
 
     /**
      * О нас
@@ -18,9 +28,24 @@ class EnumControllerGe extends Controller
     const ABOUT = 'О нас';
 
     /**
-     * Продукты
+     * Наши партнеры
      */
-    const PRODUCTS = 'Продукты';
+    const PARTNERS = 'Наши партнеры';
+
+    /**
+     * Наши продукты
+     */
+    const PRODUCTS = 'Наши продукты';
+
+    /**
+     * Наши проекты
+     */
+    const PROJECTS = 'Наши проекты';
+
+    /**
+     * Связаться с нами
+     */
+    const CONTACT = 'Связаться с нами';
 
     /**
      * Корзина
@@ -40,7 +65,51 @@ class EnumControllerGe extends Controller
     /**
      * Создать
      */
-    const CREATE = 'შექმნა';
+    const CREATE = 'Создать';
 
+    /**
+     * Цена
+     */
+    const PRICE = 'Цена';
+
+    /**
+     * Штрихкод
+     */
+    const BARCODE = 'Штрихкод';
+
+    /**
+     * Описание
+     */
+    const DESCRIPTION = 'Описание';
+
+    /**
+     * Выберите категорию
+     */
+    const SELECT_CATEGORY = 'Выберите категорию';
+
+    /**
+     * Создать новый продукт
+     */
+    const CREATE_NEW_PRODUCT = 'Создать новый продукт';
+
+    /**
+     * Добавить файл
+     */
+    const SELECT_FILE = 'Добавить фотографию';
+
+    /**
+     * Добавить еще фотографии
+     */
+    const ADD_MORE_PHOTO = 'Добавить еще фотографии';
+
+    /**
+     * Скрыть
+     */
+    const HIDE = 'Скрыть';
+
+    /**
+     * Удалить
+     */
+    const CLEAR = 'Удалить';
 
 }
