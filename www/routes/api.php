@@ -14,12 +14,14 @@ use App\Http\Controllers\Api\EntranceController;
 use App\Http\Controllers\Api\DebtorsController;
 use App\Http\Controllers\Api\OffsController;
 use App\Http\Controllers\Api\ReturnGoodsController;
+use App\Http\Controllers\Enum\LangController;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 */
+Route::post('/setLang',          [LangController::class, 'setLang']        )->name(LangController::ROUTE_SET_LANG);
 
 
 Route::post('/validation/nick',          [ValidationController::class, 'nick']        )->name(ValidationController::ROUTE_NICK);

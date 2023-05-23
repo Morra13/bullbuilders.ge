@@ -4,12 +4,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> {{$obEnum::MENU}}
         </button>
-{{--        <form action="#" class="searchform order-lg-last">--}}
-{{--            <div class="form-group d-flex">--}}
-{{--                <input type="text" class="form-control pl-3" placeholder="Search">--}}
-{{--                <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
                 @if($page == 'main')
@@ -55,6 +49,32 @@
                     <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_CONTACT) }}">{{$obEnum::CONTACT}}</a>
                 </li>
             </ul>
+        </div>
+        <div>
+            <form method="post" action="{{ route(\App\Http\Controllers\Enum\LangController::ROUTE_SET_LANG) }}" autocomplete="off" enctype="multipart/form-data">
+                @csrf
+                @method('post')
+                <input type="text" name="lang" value="ge" hidden >
+                <button type="submit" class="bg-transparent text-warning">
+                    <span class="flag-icon flag-icon-ge"></span> Ge
+                </button>
+            </form>
+            <form method="post" action="{{ route(\App\Http\Controllers\Enum\LangController::ROUTE_SET_LANG) }}" autocomplete="off" enctype="multipart/form-data">
+                @csrf
+                @method('post')
+                <input type="text" name="lang" value="ru" hidden >
+                <button type="submit" class="bg-transparent text-warning">
+                    <span class="flag-icon flag-icon-ru"></span> Ru
+                </button>
+            </form>
+            <form method="post" action="{{ route(\App\Http\Controllers\Enum\LangController::ROUTE_SET_LANG) }}" autocomplete="off" enctype="multipart/form-data">
+                @csrf
+                @method('post')
+                <input type="text" name="lang" value="eng" hidden >
+                <button type="submit" class=" bg-transparent text-warning">
+                    <span class="flag-icon flag-icon-us"></span> Eng
+                </button>
+            </form>
         </div>
     </div>
 </nav>
