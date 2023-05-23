@@ -23,18 +23,20 @@
                     </div>
                     <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                         <div class="d-flex justify-content-between">
-                            <form method="post" action="{{ route(\App\Http\Controllers\Api\UserController::ROUTE_ROLE) }}">
-                                @csrf
-                                @method('post')
-                                <input hidden name="user_id" value="{{ $user->id }}">
-                                @if($user->role == 'creator')
-                                    <input hidden name="role" value="admin">
-                                    <button  type="submit" class="btn btn-sm btn-danger mr-4" >{{ __('Make Admin') }}</button>
-                                @elseif($user->role == 'admin')
-                                    <input hidden name="role" value="creator">
-                                    <button  type="submit" class="btn btn-sm btn-info mr-4" >{{ __('Make Creator') }}</button>
-                                @endif
-                            </form>
+                            @if(auth()->user()->getAuthIdentifier() !== $user->id)
+                                <form method="post" action="{{ route(\App\Http\Controllers\Api\UserController::ROUTE_ROLE) }}">
+                                    @csrf
+                                    @method('post')
+                                    <input hidden name="user_id" value="{{ $user->id }}">
+                                    @if($user->role == 'creator')
+                                        <input hidden name="role" value="admin">
+                                        <button  type="submit" class="btn btn-sm btn-danger mr-4" >{{ __('Make Admin') }}</button>
+                                    @elseif($user->role == 'admin')
+                                        <input hidden name="role" value="creator">
+                                        <button  type="submit" class="btn btn-sm btn-info mr-4" >{{ __('Make Creator') }}</button>
+                                    @endif
+                                </form>
+                            @endif
                         </div>
                     </div>
                     <div class="card-body pt-0 pt-md-4">
