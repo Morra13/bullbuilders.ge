@@ -26,30 +26,30 @@
                 <div class="col-md-6 pl-md-5">
                     <div class="row justify-content-start py-5">
                         <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
-                            <span class="subheading">Добро пожаловать в Bull Builders</span>
-                            <h2 class="mb-4">Мы создаем и воплощаем в реальность</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <span class="subheading"> {{ __('about.welcome') }}</span>
+                            <h2 class="mb-4">{{ __('about.h1') }}</h2>
+                            <p>{{ __('about.h1text') }}</p>
                             <div class="tabulation-2 mt-4">
                                 <ul class="nav nav-pills nav-fill d-md-flex d-block">
                                     <li class="nav-item mb-md-0 mb-2">
-                                        <a class="nav-link active py-2" data-toggle="tab" href="#home1">Наша миссия</a>
+                                        <a class="nav-link active py-2" data-toggle="tab" href="#home1">{{ __('about.mission') }}</a>
                                     </li>
                                     <li class="nav-item px-lg-2 mb-md-0 mb-2">
-                                        <a class="nav-link py-2" data-toggle="tab" href="#home2">Наше видение</a>
+                                        <a class="nav-link py-2" data-toggle="tab" href="#home2">{{ __('about.vision') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Наша ценность</a>
+                                        <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">{{ __('about.value') }}</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content bg-light rounded mt-2">
                                     <div class="tab-pane container p-0 active" id="home1">
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        <p>{{ __('about.missionText') }}</p>
                                     </div>
                                     <div class="tab-pane container p-0 fade" id="home2">
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        <p>{{ __('about.visionText') }}</p>
                                     </div>
                                     <div class="tab-pane container p-0 fade" id="home3">
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        <p>{{ __('about.valueText') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <strong class="number" data-number="50">0</strong>
                         </div>
                         <div class="text-2">
-                            <span>Лет </span>
+                            <span>{{ __('about.years') }} </span>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             <strong class="number" data-number="999">0</strong>
                         </div>
                         <div class="text-2">
-                            <span>Проектов</span>
+                            <span>{{ __('about.projects') }}</span>
                         </div>
                     </div>
                     </a>
@@ -93,7 +93,7 @@
                             <strong class="number" data-number="378">0</strong>
                         </div>
                         <div class="text-2">
-                            <span>экспертов</span>
+                            <span>{{ __('about.experts') }}</span>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                             <strong class="number" data-number="1200">0</strong>
                         </div>
                         <div class="text-2">
-                            <span>Машин</span>
+                            <span>{{ __('about.machines') }}</span>
                         </div>
                     </div>
                 </div>
@@ -119,204 +119,14 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
 {{--                        <span class="subheading">Testimonial</span>--}}
-                        <h2 class="mb-4">Шаши сотрудники</h2>
+                        <h2 class="mb-4">{{ __('about.staff') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-1.jpg);">
-                                <div class="box">
-                                    <h2>Ryan Anderson</h2>
-                                    <p>Head Engineer</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-1.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Ryan Anderson <span class="position">Head Engineer</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-2.jpg);">
-                                <div class="box">
-                                    <h2>Greg Washer</h2>
-                                    <p>Head Engineer</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-2.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Greg Washer<span class="position">Head Engineer</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-3.jpg);">
-                                <div class="box">
-                                    <h2>Tony Henderson</h2>
-                                    <p>Ass. Engineer</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-3.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Tony Henderson <span class="position">Ass. Engineer</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-4.jpg);">
-                                <div class="box">
-                                    <h2>Jack Smith</h2>
-                                    <p>Architect</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-4.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Jack Smith <span class="position">Architect</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-5.jpg);">
-                                <div class="box">
-                                    <h2>Ryan Anderson</h2>
-                                    <p>President</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-5.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Ryan Anderson <span class="position">President</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-6.jpg);">
-                                <div class="box">
-                                    <h2>Greg Washer</h2>
-                                    <p>Chief Executive Officer</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-6.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Greg Washer<span class="position">Chief Executive Officer</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-7.jpg);">
-                                <div class="box">
-                                    <h2>Tony Henderson</h2>
-                                    <p>Contractor Operation Head</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{asset('argon') }}/bullbuilders/images/team-7.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Tony Henderson <span class="position">Contractor Operation Head</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="block-2 ftco-animate">
-                        <div class="flipper">
-                            <div class="front" style="background-image: url({{asset('argon') }}/bullbuilders/images/team-8.jpg);">
-                                <div class="box">
-                                    <h2>Jack Smith</h2>
-                                    <p>Chief Financial Officer</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                                <blockquote>
-                                    <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                                </blockquote>
-                                <div class="author d-flex">
-                                    <div class="image align-self-center">
-                                        <img src="{{ asset('argon') }}/bullbuilders/images/team-8.jpg" alt="">
-                                    </div>
-                                    <div class="name align-self-center ml-3">Jack Smith <span class="position">Chief Financial Officer</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @foreach($arStaff as $staff)
+                    @include('bullbuilders.userRow', ['staff' => $staff])
+                @endforeach
             </div>
         </div>
     </section>
@@ -326,88 +136,15 @@
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                    <span class="subheading">Testimonial</span>
-                    <h2 class="mb-4">Happy Clients</h2>
+                    <h2 class="mb-4">{{ __('about.сustomer_reviews') }}</h2>
                 </div>
             </div>
             <div class="row ftco-animate">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @foreach($arReviews as $review)
+                            @include('bullbuilders.reviewsRow', ['review' => $review])
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -418,12 +155,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h5 class="font-weight-bold">Home Builder</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <h5 class="font-weight-bold">Bull Builders</h5>
+                    <p>{{ __('about.p1') }}</p>
+                    <p>{{ __('about.p2') }}</p>
                 </div>
                 <div class="col-md-4">
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p>{{ __('about.p3') }}</p>
                 </div>
             </div>
         </div>

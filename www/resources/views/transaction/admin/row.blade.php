@@ -1,6 +1,6 @@
 <?php
 /** @var \App\Models\Transaction $transaction */
-//?>
+?>
 <tr>
     <th scope="row">
         <div class="media align-items-center">

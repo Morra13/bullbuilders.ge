@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reviews;
+use App\Models\Staff;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -30,8 +32,13 @@ class BullbuildersController extends Controller
     public function about()
     {
         $page = 'about';
+        $arReviews = Reviews::orderBy('id', 'desc')->take(5)->get();
+        $arStaff = Staff::all();
+
         return view('bullbuilders.about' , [
-                'page'  => $page,
+                'page'          => $page,
+                'arReviews'     => $arReviews,
+                'arStaff'       => $arStaff,
             ]
         );
     }
