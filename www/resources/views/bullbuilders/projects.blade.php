@@ -1,29 +1,31 @@
 @extends('bullbuilders.header', ['title' => __('nav.projects')])
 
 @section('content')
-
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-5 heading-section text-center ftco-animate">
-                <div class=""></div>
-                <span class="subheading"><b>Bull</b> <i>builders</i></span>
-                <h2>{{__('nav.projects')}}</h2>
-            </div>
-            <div class="col-12 text-center">
-                <div class="dropdown p-3">
-                    @if(empty($_REQUEST['status']))
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.all')}}<span class="caret"></span></button>
-                    @elseif($_REQUEST['status'] == 'completed')
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.completed')}}<span class="caret"></span></button>
-                    @elseif($_REQUEST['status'] == 'incomplete')
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.incomplete')}}<span class="caret"></span></button>
-                    @endif
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="{{url()->current()}}">{{__('projects.all')}}</a></li>
-                        <li class="dropdown-item"><a href="?status=completed">{{__('projects.completed')}}</a></li>
-                        <li class="dropdown-item"><a href="?status=incomplete">{{__('projects.incomplete')}}</a></li>
-                    </ul>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{asset('argon')}}/bullbuilders/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <h1 class="mb-0 bread">{{__('nav.projects')}}</h1>
                 </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="col-12 text-center">
+            <div class="dropdown p-3">
+                @if(empty($_REQUEST['status']))
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.all')}}<span class="caret"></span></button>
+                @elseif($_REQUEST['status'] == 'completed')
+                    <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.completed')}}<span class="caret"></span></button>
+                @elseif($_REQUEST['status'] == 'incomplete')
+                    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">{{__('projects.incomplete')}}<span class="caret"></span></button>
+                @endif
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="{{url()->current()}}" class="btn-outline-primary">{{__('projects.all')}}</a></li>
+                    <li class="dropdown-item"><a href="?status=completed" class="btn-outline-success">{{__('projects.completed')}}</a></li>
+                    <li class="dropdown-item"><a href="?status=incomplete" class="btn-outline-danger">{{__('projects.incomplete')}}</a></li>
+                </ul>
             </div>
         </div>
     </div>
