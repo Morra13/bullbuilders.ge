@@ -14,7 +14,12 @@
                     <div class="row justify-content-start py-5">
                         <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
                             <span class="subheading">{{ $arProject['name'] }}</span>
-                            <h3>{{ __('projects.status') }} : {{ $arProject['status'] }}</h3>
+                            @if($arProject['status'] == 'completed')
+                                <h3>{{ __('projects.status') }} : {{ __('projects.status_completed') }}</h3>
+                            @endif
+                            @if($arProject['status'] == 'incomplete')
+                                <h3>{{ __('projects.status') }} : {{ __('projects.status_incomplete') }}</h3>
+                            @endif
                             <p>{{ __('projects.address') }} : {{ $arProject['address'] }}</p>
                             <p>{{ __('projects.manager') }} : {{ $arProject['manager'] }}</p>
                             <p>{{ __('projects.manager_phone') }} : {{ $arProject['manager_phone'] }}</p>
