@@ -14,8 +14,6 @@ class CreateProjectsImgTable extends Migration
     public function up()
     {
         Schema::create('projects_img', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
             $table->integer('project_id');
             $table->string('img');
         });

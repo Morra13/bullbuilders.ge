@@ -35,6 +35,7 @@ Route::group(
         Route::get('/partners',                 [BullbuildersController::class, 'partners']  )->name(BullbuildersController::ROUTE_PARTNERS);
         Route::get('/products',                 [BullbuildersController::class, 'products']  )->name(BullbuildersController::ROUTE_PRODUCTS);
         Route::get('/projects',                 [BullbuildersController::class, 'projects']  )->name(BullbuildersController::ROUTE_PROJECTS);
+        Route::get('/project/{id}',             [BullbuildersController::class, 'project']   )->name(BullbuildersController::ROUTE_PROJECT);
         Route::get('/contact',                  [BullbuildersController::class, 'contact']   )->name(BullbuildersController::ROUTE_CONTACT);
         Route::get('/changeLang/{lang}',        [PublicController::class, 'changeLang']      )->name(PublicController::ROUTE_CHANGE_LANG);
     }

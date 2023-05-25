@@ -41,7 +41,7 @@
             </a>
         </div>
         <div class="center">
-            <a class="navbar-brand center" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span>builders.</span>
+            <a class="navbar-brand center" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span><i>builders.</i></span>
             </a>
         </div>
         <div class="col d-flex justify-content-end">

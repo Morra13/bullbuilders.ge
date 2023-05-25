@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __($obEnum::ADMIN) ])
+@extends('layouts.app', ['title' => __('Admin') ])
 
 @section('content')
     <div class="header pb-8 pt-5" style="background-image: url(../../../argon/img/theme/example-4.png); background-size: cover; background-position: center top;">
