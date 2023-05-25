@@ -111,26 +111,23 @@
         </div>
     </section>
 
-
     <section class="ftco-section">
         <div class="container-fluid px-md-5">
 
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-{{--                        <span class="subheading">Testimonial</span>--}}
                         <h2 class="mb-4">{{ __('about.staff') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 @foreach($arStaff as $staff)
-                    @include('bullbuilders.userRow', ['staff' => $staff])
+                    @include('bullbuilders.staffRow', ['staff' => $staff])
                 @endforeach
             </div>
         </div>
     </section>
-
 
     <section class="ftco-section testimony-section bg-primary">
         <div class="container">
