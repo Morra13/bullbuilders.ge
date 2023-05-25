@@ -17,18 +17,6 @@ class CreateStaffTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('photo')->nullable();
-            $table->string('name_ge');
-            $table->string('surname_ge');
-            $table->string('position_ge');
-            $table->string('comment_ge');
-            $table->string('name_ru')->nullable();
-            $table->string('surname_ru')->nullable();
-            $table->string('position_ru')->nullable();
-            $table->string('comment_ru')->nullable();
-            $table->string('name_en')->nullable();
-            $table->string('surname_en')->nullable();
-            $table->string('position_en')->nullable();
-            $table->string('comment_en')->nullable();
         });
     }
 
