@@ -15,10 +15,10 @@
                         <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
                             <span class="subheading">{{ $arProject['name'] }}</span>
                             @if($arProject['status'] == 'completed')
-                                <h3>{{ __('projects.status') }} : {{ __('projects.status_completed') }}</h3>
+                                <h4>{{ __('projects.status') }} : <span class="btn-success">{{ __('projects.status_completed') }}</span></h4>
                             @endif
                             @if($arProject['status'] == 'incomplete')
-                                <h3>{{ __('projects.status') }} : {{ __('projects.status_incomplete') }}</h3>
+                                <h4>{{ __('projects.status') }} : <span class="btn-danger">{{ __('projects.status_incomplete') }}</span></h4>
                             @endif
                             <p>{{ __('projects.address') }} : {{ $arProject['address'] }}</p>
                             <p>{{ __('projects.manager') }} : {{ $arProject['manager'] }}</p>

@@ -11,91 +11,49 @@
             </div>
         </div>
     </section>
-    <div class="product_image_area">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
-            <div class="row s_product_inner">
-                <div class="col-lg-6">
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="{{ asset('argon') }}/bullbuilders/images/bg_1.jpg">
+            <div class="row d-flex no-gutters">
+                <div class="col-md-6 d-flex">
+                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('argon') }}/bullbuilders/images/about.jpg);">
                     </div>
                 </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="s_product_text">
-                        <h3>Faded SkyBlu Denim Jeans</h3>
-                        <h2>$149.99</h2>
-                        <ul class="list">
-                            <li><a class="active" href="#"><span>Category</span> : Household</a></li>
-                            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
-                        </ul>
-                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-                            something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-                            during the winter.</p>
-
-                        <div class="card_area d-flex align-items-center">
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                <div class="col-md-6 pl-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                            <span class="subheading"> {{ __('Название продукта') }}</span>
+                            <h2 class="mb-4">{{ __('Цена') }}</h2>
+                            <h5 class="ion-ios-checkmark-circle">{{ __(' Ну тут какой то текст про этот продукт') }}</h5>
+                            <div class="tab-content bg-light rounded mt-2">
+                                <div class="tab-pane container p-0 active" id="home1">
+                                    <span class="ion-ios-information-circle">{{ __(' Описание продукта') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex no-gutters">
+                <div class="col-md-6 d-flex">
+                    <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('argon') }}/bullbuilders/images/about.jpg);">
+                    </div>
+                </div>
+                <div class="col-md-6 pl-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                            <span class="subheading"> {{ __('Название продукта') }}</span>
+                            <h2 class="mb-4">{{ __('Цена') }}</h2>
+                            <h5 class="ion-ios-checkmark-circle">{{ __(' Ну тут какой то текст про этот продукт') }}</h5>
+                            <div class="tab-content bg-light rounded mt-2">
+                                <div class="tab-pane container p-0 active" id="home1">
+                                    <span class="ion-ios-information-circle">{{ __(' Описание продукта') }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="product_image_area">
-        <div class="container">
-            <div class="row s_product_inner">
-                <div class="col-lg-6">
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="{{ asset('argon') }}/bullbuilders/images/bg_2.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="s_product_text">
-                        <h3>Faded SkyBlu Denim Jeans</h3>
-                        <h2>$149.99</h2>
-                        <ul class="list">
-                            <li><a class="active" href="#"><span>Category</span> : Household</a></li>
-                            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
-                        </ul>
-                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-                            something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-                            during the winter.</p>
+    </section>
 
-                        <div class="card_area d-flex align-items-center">
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product_image_area">
-        <div class="container">
-            <div class="row s_product_inner">
-                <div class="col-lg-6">
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="{{ asset('argon') }}/bullbuilders/images/bg_3.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="s_product_text">
-                        <h3>Faded SkyBlu Denim Jeans</h3>
-                        <h2>$149.99</h2>
-                        <ul class="list">
-                            <li><a class="active" href="#"><span>Category</span> : Household</a></li>
-                            <li><a href="#"><span>Availibility</span> : In Stock</a></li>
-                        </ul>
-                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-                            something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-                            during the winter.</p>
-
-                        <div class="card_area d-flex align-items-center">
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
