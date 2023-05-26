@@ -4,8 +4,11 @@
             <div class="col-md-9 py-5">
                 <div class="row">
                     <div class="col-md-4 mb-md-0 mb-4">
-                        <h2 class="footer-heading">About us</h2>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <a class="navbar-brand pt-0" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">
+                            <img src="{{ asset('argon') }}/img/brand/logo_1.png" class="navbar-brand-img" alt="...">
+                            <a class="navbar-brand center" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_INDEX) }}">Bull<span class="footer-heading"><i>builders.</i></span>
+                            </a>
+                        </a>
                         <ul class="ftco-footer-social p-0">
                             <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
@@ -16,32 +19,14 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12 col-lg-10">
                                 <div class="row">
-                                    <div class="col-md-4 mb-md-0 mb-4">
-                                        <h2 class="footer-heading">Services</h2>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="py-1 d-block">Construction</a></li>
-                                            <li><a href="#" class="py-1 d-block">House Renovation</a></li>
-                                            <li><a href="#" class="py-1 d-block">Painting</a></li>
-                                            <li><a href="#" class="py-1 d-block">Arhictecture Design</a></li>
-                                        </ul>
+                                    <div class="col-md-6 mb-md-0 mb-6">
+                                        <h2 class="footer-heading">{{ __('footer.about_bull') }}</h2>
                                     </div>
-                                    <div class="col-md-4 mb-md-0 mb-4">
-                                        <h2 class="footer-heading">About</h2>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="py-1 d-block">Staff</a></li>
-                                            <li><a href="#" class="py-1 d-block">Team</a></li>
-                                            <li><a href="#" class="py-1 d-block">Careers</a></li>
-                                            <li><a href="#" class="py-1 d-block">Blog</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4 mb-md-0 mb-4">
-                                        <h2 class="footer-heading">Resources</h2>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#" class="py-1 d-block">Security</a></li>
-                                            <li><a href="#" class="py-1 d-block">Global</a></li>
-                                            <li><a href="#" class="py-1 d-block">Charts</a></li>
-                                            <li><a href="#" class="py-1 d-block">Privacy</a></li>
-                                        </ul>
+                                    <div class="col-md-6 mb-md-0 mb-6">
+                                        <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_ABOUT) }}" class="nav-link btn-outline-dark">{{ __('footer.about') }}<span class="footer-heading"></span></a>
+                                        <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PARTNERS) }}" class="nav-link btn-outline-dark">{{ __('footer.partners') }}<span class="footer-heading"></span></a>
+                                        <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PROJECTS) }}" class="nav-link btn-outline-dark">{{ __('footer.projects') }}<span class="footer-heading"></span></a>
+                                        <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_PRODUCTS) }}" class="nav-link btn-outline-dark">{{ __('footer.products') }}<span class="footer-heading"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -51,35 +36,31 @@
                 <div class="row mt-md-5">
                     <div class="col-md-12">
                         <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            {{ __('footer.see_you') . ' ' }}<i class="ion-ios-heart" aria-hidden="true"></i> <a href="{{ Request::root()}}" target="_blank">Bullbuilders.ge</a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-                <h2 class="footer-heading">Request A Quote</h2>
+                <h2 class="footer-heading">{{__('nav.contact')}}</h2>
                 <form action="#" class="contact-form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name">
+                        <input type="text" class="form-control" placeholder="{{__('contact.name')}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email">
+                        <input type="text" class="form-control" placeholder="{{__('contact.email')}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject">
+                        <input type="text" class="form-control" placeholder="{{__('contact.theame')}}">
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="{{__('contact.message')}}"></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control submit px-3">Send</button>
+                        <button type="submit" class="form-control submit px-3">{{__('contact.send_message')}}</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- loader -->
-{{--<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>--}}
-
