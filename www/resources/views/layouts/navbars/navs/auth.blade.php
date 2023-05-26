@@ -20,17 +20,17 @@
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <a href="{{ route(\App\Http\Controllers\UserController::ROUTE_EDIT) }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>{{ __('My profile') }}</span>
+                        <span>{{ __('admin.profile') }}</span>
                     </a>
                     <a href="{{ route(\App\Http\Controllers\UserController::ROUTE_PASSWORD) }}" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Change password') }}</span>
+                        <span>{{ __('admin.change_password') }}</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_LOGOUT) }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="ni ni-user-run"></i>
-                        <span>{{ __('Logout') }}</span>
+                        <span>{{ __('admin.logout') }}</span>
                     </a>
                 </div>
             </li>

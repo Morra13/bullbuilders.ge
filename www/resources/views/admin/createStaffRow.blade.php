@@ -39,47 +39,46 @@
             <div class="mt-md-5">
                 <div>
                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-name">{{ __('Имя') }}</label>
+                        <label class="form-control-label" for="input-name">{{ __('admin.name') }}</label>
                         <input
                             type="text"
                             name="name_{{$lang}}"
                             id="input-name_{{$lang}}"
                             class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('Имя') }}"
+                            placeholder="{{ __('admin.name') }}"
                             required
                         >
                     </div>
                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-name">{{ __('Фамилия') }}</label>
+                        <label class="form-control-label" for="input-name">{{ __('admin.surname') }}</label>
                         <input
                             type="text"
                             name="surname_{{$lang}}"
                             id="input-surname_{{$lang}}"
                             class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('Фамилия') }}"
+                            placeholder="{{ __('admin.surname') }}"
                             required
                         >
                     </div>
                     <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-link">{{ __('Позиция') }}</label>
+                        <label class="form-control-label" for="input-link">{{ __('admin.position') }}</label>
                         <input
                             type="text"
                             name="position_{{$lang}}"
                             id="position_{{$lang}}"
                             class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('Позиция') }}"
+                            placeholder="{{ __('admin.position') }}"
                             required
                         >
                     </div>
-
                     <div class="form-group{{ $errors->has('short_description') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-short_description">{{ __('Коментарий') }}</label>
+                        <label class="form-control-label" for="input-short_description">{{ __('admin.comment') }}</label>
                         <textarea
                             name="comment_{{$lang}}"
                             id="comment_{{$lang}}"
                             class="form-control form-control-alternative{{ $errors->has('short_description') ? ' is-invalid' : '' }}"
                             rows="5"
-                            placeholder="{{ __('Коментарий') }}"
+                            placeholder="{{ __('admin.comment') }}"
                             required
                         ></textarea>
                     </div>

@@ -1,14 +1,14 @@
-@extends('layouts.app', ['title' => __('Создать нового сотрудника')])
+@extends('layouts.app', ['title' => __('admin.create_staff')])
 
 @section('content')
     <div class="header pb-8 pt-5 d-flex align-items-center" style="background-image: url(../argon/img/theme/instagram-1.jpg); background-size: cover; background-position: center top;">
         <!-- Mask -->
-        <span class="mask bg-gradient-default opacity-8"></span>
+        <span class="mask bg-gradient-default opacity-5"></span>
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-white">Создать нового сотрудника</h1>
+                    <h1 class="text-white">{{__('admin.create_staff')}}</h1>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-creatory mt-4">{{ __('Create') }}</button>
+                        <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.create') }}</button>
                     </div>
                 </div>
             </div>

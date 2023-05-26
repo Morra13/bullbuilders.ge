@@ -21,7 +21,6 @@
         {{$user->role}}
     </td>
     <td class="format-date" data-date="{{$user->created_at->format('c')}}"></td>
-    <td class="format-date" data-date="{{$user->updated_at->format('c')}}"></td>
     <td class="budget">
         <a href="{{route(\App\Http\Controllers\InstructionController::ROUTE_ADMIN_LIST)}}?user_id={{$user->id}}" class="h3"></a>
     </td>
