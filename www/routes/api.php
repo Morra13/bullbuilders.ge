@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\EntranceController;
 use App\Http\Controllers\Api\DebtorsController;
 use App\Http\Controllers\Api\OffsController;
 use App\Http\Controllers\Api\ReturnGoodsController;
-use App\Http\Controllers\Enum\LangController;
+use App\Http\Controllers\Api\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +38,8 @@ Route::get('/auth/facebook/callback',    [SocialController::class, 'facebookCall
 Route::group(
     ['middleware' => 'auth'],
     function () {
+        Route::post('/staff/create',                     [AdminController::class, 'createStaff']    )->name(AdminController::ROUTE_CREATE_STAFF);
+
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);
         Route::post('/user/password',                    [UserController::class, 'password']        )->name(UserController::ROUTE_PASSWORD);

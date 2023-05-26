@@ -14,6 +14,9 @@ class AdminCotroller extends Controller
     /** @var string  */
     const ROUTE_USER_ROLE_UPDATE    = 'admin.userRoleUpdate';
 
+    /** @var string  */
+    const ROUTE_CREATE_STAFF        = 'admin.createStaff';
+
     /**
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
@@ -80,5 +83,15 @@ class AdminCotroller extends Controller
                 'user'  => (new User)->find($id)
             ]
         );
+    }
+
+    /**
+     * Создать сотрудника
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function createStaff()
+    {
+        return view('admin.createStaff');
     }
 }

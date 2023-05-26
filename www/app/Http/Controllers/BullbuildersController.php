@@ -76,17 +76,17 @@ class BullbuildersController extends Controller
         }
 
         foreach ($arStaffMain as $key => $staff) {
-            $arInfo = $obStaff::all()->where('staff_id', $staff->id)->first();
+            $arInfoStaff = $obStaff::all()->where('staff_id', $staff->id)->first();
+
             $arStaff [$key] = [
                 'id'            => $staff->id,
                 'photo'         => $staff->photo,
-                'name'          => $arInfo->name,
-                'surname'       => $arInfo->surname,
-                'position'      => $arInfo->position,
-                'comment'       => $arInfo->comment,
+                'name'          => $arInfoStaff['name'],
+                'surname'       => $arInfoStaff['surname'],
+                'position'      => $arInfoStaff['position'],
+                'comment'       => $arInfoStaff['comment'],
             ];
         }
-
         return view('bullbuilders.about' , [
                 'page'          => $page,
                 'arReviews'     => $arReviews,

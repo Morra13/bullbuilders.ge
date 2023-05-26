@@ -3,7 +3,7 @@
 <div class="row align-items-center justify-content-xl-between">
     <div class="col-xl-6">
         <div class="copyright text-center text-xl-left text-muted">
-            &copy; {{ now()->year }} S.M.F
+            &copy; {{ now()->year }} Bull Builders
         </div>
     </div>
 {{--    <div class="col-xl-6">--}}
