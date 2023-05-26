@@ -19,6 +19,8 @@ class Reviews_ru extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     /**
      * The table associated with the model.
      *
