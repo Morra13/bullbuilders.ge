@@ -51,6 +51,7 @@
                     </div>
                 </div>
             </div>
+
             @if(auth()->user()->isAdmin())
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
@@ -75,39 +76,28 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReviewsController::ROUTE_REVIEWS) }}">
-                            <i class="ni ni-badge {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.reviews') }}
+                            <i class="ni ni-like-2 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.reviews') }}
                         </a>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\OffsController::ROUTE_OFFS) }}">--}}
-{{--                            <i class="ni ni-fat-delete {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS ? 'text-danger' : 'text-primary' }}"></i> {{ __('პროდუქტის ჩამოწერა') }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS_CHECK ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\OffsController::ROUTE_OFFS_CHECK) }}">--}}
-{{--                            <i class="ni ni-scissors {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS_CHECK ? 'text-danger' : 'text-primary' }}"></i> {{ __('ჩამოწერილი პროდუქტების ნახვა') }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN_CHECK ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN_CHECK) }}">--}}
-{{--                            <i class="ni ni-curved-next {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReturnGoodsController::ROUTE_RETURN_CHECK ? 'text-danger' : 'text-primary' }}"></i> {{ __('დაბრუნებული პროდუქტების ნახვა') }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
                 </ul>
-{{--                <hr class="my-3">--}}
-{{--                <ul class="navbar-nav mb-md-3">--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_CREATE ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductController::ROUTE_CREATE) }}">--}}
-{{--                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_CREATE ? 'text-danger' : 'text-primary' }}"></i> {{ __('ახალი პროდუქტის შექმნა') }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_CREATE_TYPE ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductController::ROUTE_CREATE_TYPE) }}">--}}
-{{--                            <i class="ni ni-fat-remove {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductController::ROUTE_CREATE_TYPE ? 'text-danger' : 'text-primary' }}"></i> {{ __('ახალი კატეგორიის შექმნა ') }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
             @endif
+            <ul class="navbar-nav mb-md-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ge') }}">
+                        <span class="flag-icon flag-icon-ge"></span> Geo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ru') }}">
+                        <span class="flag-icon flag-icon-ru"></span> Ru
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'en') }}">
+                        <span class="flag-icon flag-icon-us"></span> Eng
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
