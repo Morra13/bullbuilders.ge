@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('admin.staff') ])
+@extends('layouts.app', ['title' => __('admin.reviews') ])
 
 @section('content')
     <div class="header pb-8 pt-5" style="background-image: url(../../../argon/img/theme/example-4.png); background-size: cover; background-position: center top;">
@@ -7,7 +7,7 @@
             <div class="header-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-white">{{ __('admin.staff') }}</h1>
+                        <h1 class="text-white">{{ __('admin.reviews') }}</h1>
                         <p class="text-white mt-0 mb-5"></p>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-                            @foreach ($arStaff as $staff)
-                                @include('admin.staff.staffRow', ['staff' => $staff])
+                            @foreach ($arReviews as $review)
+                                @include('admin.reviews.reviewsRow', ['review' => $review])
                             @endforeach
                             </tbody>
                         </table>
@@ -52,6 +52,3 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
-
-
-

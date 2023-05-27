@@ -15,6 +15,7 @@ use App\Http\Controllers\ReturnGoodsController;
 use App\Http\Controllers\BullbuildersController;
 use App\Http\Controllers\AdminCotroller;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ReviewsController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -101,6 +102,9 @@ Route::group(
         Route::get('/createStaff',            [StaffController::class, 'createStaff']    )->name(StaffController::ROUTE_CREATE_STAFF);
         Route::get('/staff',                  [StaffController::class, 'staff']          )->name(StaffController::ROUTE_STAFF);
         Route::get('/staffUpdate/{id}',       [StaffController::class, 'staffUpdate']    )->name(StaffController::ROUTE_STAFF_UPDATE);
+        Route::get('/createReviews',          [ReviewsController::class, 'createReviews'])->name(ReviewsController::ROUTE_CREATE_REVIEWS);
+        Route::get('/reviews',                [ReviewsController::class, 'reviews']      )->name(ReviewsController::ROUTE_REVIEWS);
+        Route::get('/reviewsUpdate/{id}',     [ReviewsController::class, 'reviewsUpdate'])->name(ReviewsController::ROUTE_REVIEWS_UPDATE);
 
     }
 );

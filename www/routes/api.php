@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\DebtorsController;
 use App\Http\Controllers\Api\OffsController;
 use App\Http\Controllers\Api\ReturnGoodsController;
 use App\Http\Controllers\Api\StaffController;
+use App\Http\Controllers\Api\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,10 @@ Route::group(
         Route::post('/staff/create',                     [StaffController::class, 'createStaff']    )->name(StaffController::ROUTE_CREATE_STAFF);
         Route::post('/staff/update',                     [StaffController::class, 'staffUpdate']    )->name(StaffController::ROUTE_STAFF_UPDATE);
         Route::get ('/staff/delete/{id}',                [StaffController::class, 'staffDelete']    )->name(StaffController::ROUTE_STAFF_DELETE);
+
+        Route::post('/reviews/create',                   [ReviewsController::class, 'createReviews'])->name(ReviewsController::ROUTE_CREATE_REVIEWS);
+        Route::post('/reviews/update',                   [ReviewsController::class, 'reviewsUpdate'])->name(ReviewsController::ROUTE_REVIEWS_UPDATE);
+        Route::get ('/reviews/delete/{id}',              [ReviewsController::class, 'reviewsDelete'])->name(ReviewsController::ROUTE_REVIEWS_DELETE);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

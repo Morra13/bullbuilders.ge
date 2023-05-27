@@ -68,6 +68,16 @@
                             <i class="ni ni-badge {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\StaffController::ROUTE_STAFF ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.staff') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_CREATE_REVIEWS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReviewsController::ROUTE_CREATE_REVIEWS) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_CREATE_REVIEWS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_review') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ReviewsController::ROUTE_REVIEWS) }}">
+                            <i class="ni ni-badge {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.reviews') }}
+                        </a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\OffsController::ROUTE_OFFS) }}">--}}
 {{--                            <i class="ni ni-fat-delete {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\OffsController::ROUTE_OFFS ? 'text-danger' : 'text-primary' }}"></i> {{ __('პროდუქტის ჩამოწერა') }}--}}

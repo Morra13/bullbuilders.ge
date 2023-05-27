@@ -25,7 +25,7 @@ class StaffController extends Controller
      */
     public function createStaff()
     {
-        return view('admin/staff.createStaff');
+        return view('admin.staff.createStaff');
     }
 
     /**
@@ -73,7 +73,7 @@ class StaffController extends Controller
         }
 
         return view(
-            'admin/staff.staff',
+            'admin.staff.staff',
             [
                 'arStaff'       => $arStaff,
                 'pagination'    => [
@@ -129,7 +129,7 @@ class StaffController extends Controller
         ];
 
         return view(
-            'admin/staff.staffUpdate',
+            'admin.staff.staffUpdate',
             [
                 'arStaff'  => $arStaff,
             ]
