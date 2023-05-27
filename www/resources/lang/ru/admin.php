@@ -19,6 +19,7 @@ return [
     'logout'            => 'Выйти',
     'staff'             => 'Сотрудники',
     'update'            => 'Обновить',
+    'staff_update'      => 'Обновить сотрудника',
     'delete'            => 'Удалить',
     'create_review'     => 'Создать отзыв',
     'reviews'           => 'Отзывы',

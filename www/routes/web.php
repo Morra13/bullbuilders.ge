@@ -98,6 +98,8 @@ Route::group(
         Route::get('/admin',                  [AdminCotroller::class, 'admin']           )->name(AdminCotroller::ROUTE_ADMIN);
         Route::get('/admin/user/{id}',        [AdminCotroller::class, 'userRoleUpdate']  )->name(AdminCotroller::ROUTE_USER_ROLE_UPDATE);
         Route::get('/createStaff',            [AdminCotroller::class, 'createStaff']     )->name(AdminCotroller::ROUTE_CREATE_STAFF);
+        Route::get('/staff',                  [AdminCotroller::class, 'staff']           )->name(AdminCotroller::ROUTE_STAFF);
+        Route::get('/staffUpdate/{id}',       [AdminCotroller::class, 'staffUpdate']     )->name(AdminCotroller::ROUTE_STAFF_UPDATE);
 
     }
 );

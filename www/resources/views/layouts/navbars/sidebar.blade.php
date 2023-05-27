@@ -55,7 +55,7 @@
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
                         <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_ADMIN ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\AdminCotroller::ROUTE_ADMIN) }}">
-                            <i class="ni ni-circle-08 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_ADMIN ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.users') }}
+                            <i class="ni ni-circle-08 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_ADMIN ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.admin') }}
                         </a>
                     </li>
                     <li class="nav-item">
