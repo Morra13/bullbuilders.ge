@@ -19,6 +19,7 @@ class Reviews_en extends Model
 {
     use HasFactory;
 
+    public $primaryKey = null;
     public $timestamps = false;
 
     /**

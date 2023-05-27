@@ -19,6 +19,7 @@ class Staff_ge extends Model
 {
     use HasFactory;
 
+    public $primaryKey = null;
     public $timestamps = false;
 
     /**
