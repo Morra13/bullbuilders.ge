@@ -20,6 +20,7 @@ class Staff_ru extends Model
     use HasFactory;
 
     public $primaryKey = null;
+    public $incrementing = false;
     public $timestamps = false;
 
     /**
