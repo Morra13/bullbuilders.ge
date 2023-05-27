@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('admin.staff') ])
+@extends('layouts.app', ['title' => __('admin.staff.staff') ])
 
 @section('content')
     <div class="header pb-8 pt-5" style="background-image: url(../../../argon/img/theme/example-4.png); background-size: cover; background-position: center top;">
@@ -38,7 +38,7 @@
                             </thead>
                             <tbody class="list">
                             @foreach ($arStaff as $staff)
-                                @include('admin.staffRow', ['staff' => $staff])
+                                @include('admin.staff.staffRow', ['staff' => $staff])
                             @endforeach
                             </tbody>
                         </table>

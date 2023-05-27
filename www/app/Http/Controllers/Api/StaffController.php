@@ -9,7 +9,7 @@ use App\Models\Staff_ge;
 use App\Models\Staff_ru;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class StaffController extends Controller
 {
     /** @var string  */
     const ROUTE_CREATE_STAFF        = 'api.admin.createStaff';
@@ -64,7 +64,7 @@ class AdminController extends Controller
             $obStaffEn->save();
         }
 
-        return redirect()->route(\App\Http\Controllers\AdminCotroller::ROUTE_CREATE_STAFF);
+        return redirect()->route(\App\Http\Controllers\StaffController::ROUTE_CREATE_STAFF);
     }
 
     /**
@@ -128,7 +128,7 @@ class AdminController extends Controller
             )
         ;
 
-        return redirect()->route(\App\Http\Controllers\AdminCotroller::ROUTE_STAFF);
+        return redirect()->route(\App\Http\Controllers\StaffController::ROUTE_STAFF);
     }
 
     /**
@@ -148,7 +148,7 @@ class AdminController extends Controller
         $obStaffRu = (new Staff_ru())->where('staff_id', $id)->delete();
         $obStaffEn = (new Staff_en())->where('staff_id', $id)->delete();
 
-        return redirect()->route(\App\Http\Controllers\AdminCotroller::ROUTE_STAFF);
+        return redirect()->route(\App\Http\Controllers\StaffController::ROUTE_STAFF);
     }
 
 }

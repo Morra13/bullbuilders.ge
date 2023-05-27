@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\EntranceController;
 use App\Http\Controllers\Api\DebtorsController;
 use App\Http\Controllers\Api\OffsController;
 use App\Http\Controllers\Api\ReturnGoodsController;
-use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +38,9 @@ Route::get('/auth/facebook/callback',    [SocialController::class, 'facebookCall
 Route::group(
     ['middleware' => 'auth'],
     function () {
-        Route::post('/staff/create',                     [AdminController::class, 'createStaff']    )->name(AdminController::ROUTE_CREATE_STAFF);
-        Route::post('/staff/update',                     [AdminController::class, 'staffUpdate']    )->name(AdminController::ROUTE_STAFF_UPDATE);
-        Route::get('/staff/delete/{id}',                 [AdminController::class, 'staffDelete']    )->name(AdminController::ROUTE_STAFF_DELETE);
+        Route::post('/staff/create',                     [StaffController::class, 'createStaff']    )->name(StaffController::ROUTE_CREATE_STAFF);
+        Route::post('/staff/update',                     [StaffController::class, 'staffUpdate']    )->name(StaffController::ROUTE_STAFF_UPDATE);
+        Route::get ('/staff/delete/{id}',                [StaffController::class, 'staffDelete']    )->name(StaffController::ROUTE_STAFF_DELETE);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

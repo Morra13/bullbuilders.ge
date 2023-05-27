@@ -32,6 +32,7 @@ return [
     'create_product'    => 'Создать продукт',
     'products'          => 'Продукты',
     'update_product'    => 'Обновить продукт',
-    'delete_product'    => 'УДалить продукт',
+    'delete_product'    => 'Удалить продукт',
+    'required'          => 'Фото обязательно',
 
 ];

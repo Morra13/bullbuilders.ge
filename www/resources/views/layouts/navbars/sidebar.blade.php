@@ -59,13 +59,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_CREATE_STAFF ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\AdminCotroller::ROUTE_CREATE_STAFF) }}">
-                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_CREATE_STAFF ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_staff') }}
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\StaffController::ROUTE_CREATE_STAFF ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\StaffController::ROUTE_CREATE_STAFF) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\StaffController::ROUTE_CREATE_STAFF ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_staff') }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_STAFF ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\AdminCotroller::ROUTE_STAFF) }}">
-                            <i class="ni ni-badge {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\AdminCotroller::ROUTE_STAFF ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.staff') }}
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\StaffController::ROUTE_STAFF ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\StaffController::ROUTE_STAFF) }}">
+                            <i class="ni ni-badge {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\StaffController::ROUTE_STAFF ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.staff') }}
                         </a>
                     </li>
 {{--                    <li class="nav-item">--}}

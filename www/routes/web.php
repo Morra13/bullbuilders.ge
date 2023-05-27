@@ -14,6 +14,7 @@ use App\Http\Controllers\OffsController;
 use App\Http\Controllers\ReturnGoodsController;
 use App\Http\Controllers\BullbuildersController;
 use App\Http\Controllers\AdminCotroller;
+use App\Http\Controllers\StaffController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -97,9 +98,9 @@ Route::group(
 
         Route::get('/admin',                  [AdminCotroller::class, 'admin']           )->name(AdminCotroller::ROUTE_ADMIN);
         Route::get('/admin/user/{id}',        [AdminCotroller::class, 'userRoleUpdate']  )->name(AdminCotroller::ROUTE_USER_ROLE_UPDATE);
-        Route::get('/createStaff',            [AdminCotroller::class, 'createStaff']     )->name(AdminCotroller::ROUTE_CREATE_STAFF);
-        Route::get('/staff',                  [AdminCotroller::class, 'staff']           )->name(AdminCotroller::ROUTE_STAFF);
-        Route::get('/staffUpdate/{id}',       [AdminCotroller::class, 'staffUpdate']     )->name(AdminCotroller::ROUTE_STAFF_UPDATE);
+        Route::get('/createStaff',            [StaffController::class, 'createStaff']    )->name(StaffController::ROUTE_CREATE_STAFF);
+        Route::get('/staff',                  [StaffController::class, 'staff']          )->name(StaffController::ROUTE_STAFF);
+        Route::get('/staffUpdate/{id}',       [StaffController::class, 'staffUpdate']    )->name(StaffController::ROUTE_STAFF_UPDATE);
 
     }
 );

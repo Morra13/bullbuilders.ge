@@ -16,13 +16,14 @@
                             class="d-none"
                             onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])"
                             accept=".jpg,.jpeg,.png"
+                            required
                         />
                     </div>
                 </div>
             </div>
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                 <div class="d-flex justify-content-between">
-                    {{-- <a href="#" class="btn btn-sm btn-info mr-4">{{ __('Copy link') }}</a>--}}
+                     <span class="btn btn-sm btn-danger mr-4">{{ __('admin.required') }}</span>
                     {{-- <a href="#" class="btn btn-sm btn-default float-right">{{ __('My sales') }}</a>--}}
                 </div>
             </div>
