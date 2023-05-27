@@ -34,5 +34,10 @@ return [
     'update_product'    => 'Обновить продукт',
     'delete_product'    => 'Удалить продукт',
     'required'          => 'Фото обязательно',
+    'status'            => 'Статус',
+    'manager_phone'     => 'Телефон менеджера',
+    'description'       => 'Описание',
+    'manager'           => 'Менеджер',
+    'address'           => 'Адрес',
 
 ];

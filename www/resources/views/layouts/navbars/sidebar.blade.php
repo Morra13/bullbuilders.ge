@@ -79,6 +79,16 @@
                             <i class="ni ni-like-2 {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ReviewsController::ROUTE_REVIEWS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.reviews') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProjectsController::ROUTE_CREATE_PROJECT ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProjectsController::ROUTE_CREATE_PROJECT) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProjectsController::ROUTE_CREATE_PROJECT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_project') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProjectsController::ROUTE_PROJECT ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProjectsController::ROUTE_PROJECT) }}">
+                            <i class="ni ni-shop {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProjectsController::ROUTE_PROJECT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.projects') }}
+                        </a>
+                    </li>
                 </ul>
             @endif
             <ul class="navbar-nav mb-md-3">
