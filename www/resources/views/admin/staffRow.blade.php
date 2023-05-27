@@ -21,6 +21,6 @@
         <span> {{ $staff['comment'] }} </span>
     </td>
     <td>
-        <a href="{{route(\App\Http\Controllers\AdminCotroller::ROUTE_STAFF, $staff['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
+        <a href="{{route(\App\Http\Controllers\Api\AdminController::ROUTE_STAFF_DELETE, $staff['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
     </td>
 </tr>

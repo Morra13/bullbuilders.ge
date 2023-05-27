@@ -39,6 +39,8 @@ Route::group(
     ['middleware' => 'auth'],
     function () {
         Route::post('/staff/create',                     [AdminController::class, 'createStaff']    )->name(AdminController::ROUTE_CREATE_STAFF);
+        Route::post('/staff/update',                     [AdminController::class, 'staffUpdate']    )->name(AdminController::ROUTE_STAFF_UPDATE);
+        Route::get('/staff/delete/{id}',                 [AdminController::class, 'staffDelete']    )->name(AdminController::ROUTE_STAFF_DELETE);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

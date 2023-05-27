@@ -13,9 +13,11 @@
             </div>
         </div>
     </div>
-    <form method="post" action="{{ route(\App\Http\Controllers\Api\AdminController::ROUTE_CREATE_STAFF) }}" autocomplete="off" enctype="multipart/form-data">
+
+    <form method="post" action="{{ route(\App\Http\Controllers\Api\AdminController::ROUTE_STAFF_UPDATE) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                <input name="id" value="{{$arStaff['ge']['id']}}" hidden>
                 @foreach($arStaff as $lang => $staff)
                     @include(
                                 'admin.updateStaffRow', [
@@ -26,7 +28,7 @@
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.create') }}</button>
+                        <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.update') }}</button>
                     </div>
                 </div>
             </div>
