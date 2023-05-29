@@ -14,6 +14,7 @@ class CreateReviewsEnTable extends Migration
     public function up()
     {
         Schema::create('reviews_en', function (Blueprint $table) {
+            $table->id();
             $table->integer('review_id');
             $table->string('name');
             $table->string('surname');

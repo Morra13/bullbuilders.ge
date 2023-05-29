@@ -14,6 +14,7 @@ class CreateProjectsRuTable extends Migration
     public function up()
     {
         Schema::create('projects_ru', function (Blueprint $table) {
+            $table->id();
             $table->integer('project_id');
             $table->string('name');
             $table->string('manager');

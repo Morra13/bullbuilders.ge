@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Projects_ru
  * @package App\Models
  *
+ * @property int id
  * @property int project_id
  * @property string name
  * @property string manager
@@ -19,8 +20,6 @@ class Projects_ru extends Model
 {
     use HasFactory;
 
-    public $primaryKey = null;
-    public $incrementing = false;
     public $timestamps = false;
 
     /**

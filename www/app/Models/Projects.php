@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string status
  * @property string main_img
  * @property string manager_phone
+ * @property carbon date_begin
+ * @property carbon date_end
  */
 class Projects extends Model
 {

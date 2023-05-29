@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Reviews_ge
  * @package App\Models
  *
+ * @property int id
  * @property int review_id
  * @property string name
  * @property string surname
@@ -19,8 +20,6 @@ class Reviews_ge extends Model
 {
     use HasFactory;
 
-    public $primaryKey = null;
-    public $incrementing = false;
     public $timestamps = false;
 
     /**

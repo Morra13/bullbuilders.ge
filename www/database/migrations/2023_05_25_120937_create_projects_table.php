@@ -19,6 +19,8 @@ class CreateProjectsTable extends Migration
             $table->string('status');
             $table->string('main_img');
             $table->string('manager_phone')->nullable();
+            $table->date('date_begin')->nullable();
+            $table->date('date_end')->nullable();
         });
     }
 

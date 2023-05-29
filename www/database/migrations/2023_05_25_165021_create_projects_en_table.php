@@ -14,6 +14,7 @@ class CreateProjectsEnTable extends Migration
     public function up()
     {
         Schema::create('projects_en', function (Blueprint $table) {
+            $table->id();
             $table->integer('project_id');
             $table->string('name');
             $table->string('manager');

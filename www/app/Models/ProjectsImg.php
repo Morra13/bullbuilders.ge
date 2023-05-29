@@ -17,6 +17,7 @@ class ProjectsImg extends Model
     use HasFactory;
 
     public $primaryKey = null;
+    public $incrementing = false;
     public $timestamps = false;
 
     /**
