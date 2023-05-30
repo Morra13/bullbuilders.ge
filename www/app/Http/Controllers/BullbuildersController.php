@@ -6,6 +6,10 @@ use App\Models\Partners;
 use App\Models\Partners_en;
 use App\Models\Partners_ge;
 use App\Models\Partners_ru;
+use App\Models\Products;
+use App\Models\Products_en;
+use App\Models\Products_ge;
+use App\Models\Products_ru;
 use App\Models\Projects;
 use App\Models\Projects_en;
 use App\Models\Projects_ge;
@@ -105,7 +109,6 @@ class BullbuildersController extends Controller
     public function partners()
     {
         $arPartners = [];
-
         $page = 'partners';
 
         $obPartners = new Partners_ge();
@@ -146,7 +149,7 @@ class BullbuildersController extends Controller
 
         return view('bullbuilders.partners',
             [
-                'page'    => $page,
+                'page'          => $page,
                 'arPartners'    => $arPartners,
                 'pagination'    => [
                     'total'       => $iCount,
@@ -163,9 +166,56 @@ class BullbuildersController extends Controller
      */
     public function products()
     {
+        $arProducts = [];
         $page = 'products';
-        return view('bullbuilders.products' , [
-                'page'  => $page,
+
+        $obProducts = new Products_ge();
+
+        if (session()->get('lang') == 'ru') {
+            $obProducts = new Products_ru();
+        } elseif (session()->get('lang') == 'en') {
+            $obProducts = new Products_en();
+        }
+
+        $iCount = (new Products())
+            ->get()
+            ->count();
+
+        $iPage = $_REQUEST['page'] ?? 1;
+
+        if (($iPage - 1) * self::TABLE_ROWS_LIMIT > $iCount) {
+            $iPage = 1;
+        }
+
+        $arProductsMain = (new Products())
+            ->skip(($iPage - 1) * self::TABLE_ROWS_LIMIT)
+            ->take(self::TABLE_ROWS_LIMIT)
+            ->orderByDesc('created_at')
+            ->get();
+
+        foreach ($arProductsMain as $key => $product) {
+            $arInfoProducts = $obProducts::all()->where('product_id', $product->id)->first();
+
+            $arProducts [$key] = [
+                'id'            => $product->id,
+                'main_img'      => $product->main_img,
+                'price'         => $product->price,
+                'name'          => $arInfoProducts['name'],
+                'title'         => $arInfoProducts['title'],
+                'description'   => $arInfoProducts['description'],
+            ];
+        }
+
+        return view('bullbuilders.products' ,
+            [
+                'page'          => $page,
+                'arProducts'    => $arProducts,
+                'pagination'    => [
+                    'total'       => $iCount,
+                    'limit'       => self::TABLE_ROWS_LIMIT,
+                    'page_count'  => ceil($iCount / self::TABLE_ROWS_LIMIT),
+                    'page'        => $iPage,
+                ]
             ]
         );
     }
