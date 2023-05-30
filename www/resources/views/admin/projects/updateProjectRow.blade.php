@@ -1,98 +1,16 @@
-<div class="col-xl-4 order-xl-1">
-    @csrf
-    @method('post')
+<div class="col-xl-3 order-xl-1">
     <div class="card card-profile shadow"  style="min-height: 700px;">
         @if($lang == 'ge')
-            <div class="row justify-content-center">
-                <div class="col-lg-3 order-lg-2">
-                    <div class="card-profile-image">
-                        <label for="chooseFile">
-                            @if(!empty($project['main_img']))
-                                <img id="avatar" src="{{ asset('storage') . '/' . $project['main_img']}}" class="rounded-circle">
-                            @else
-                                <img id="avatar" src="{{ asset('storage') . '/uploads/defaultUploadImg.png'}}" class="rounded-circle">
-                            @endif
-                        </label>
-                        <input
-                            id="chooseFile"
-                            name="main_img"
-                            type="file"
-                            class="d-none"
-                            onchange="document.getElementById('avatar').src = window.URL.createObjectURL(this.files[0])"
-                            accept=".jpg,.jpeg,.png"
-                        />
-                    </div>
-                </div>
-            </div>
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <div class="d-flex justify-content-between">
-                    {{-- <a href="#" class="btn btn-sm btn-info mr-4">{{ __('Copy link') }}</a>--}}
-                    {{-- <a href="#" class="btn btn-sm btn-default float-right">{{ __('My sales') }}</a>--}}
-                </div>
-            </div>
-            <div class="card-body pt-0 pt-md-4">
-                <div class="mt-md-2">
-                    <div class="dropdown p-3">
-                        <label class="form-control-label" for="input-name">{{ __('admin.status')}}</label>
-                        @if($project['status'] == "completed")
-                            <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
-                                <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
-                                <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
-                            </select>
-                        @elseif($project['status'] == "incomplete")
-                            <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
-                                <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
-                                <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
-                            </select>
-                        @endif
-
-                    </div>
-                    <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-link">{{ __('admin.manager_phone') }}</label>
-                        <input
-                            type="text"
-                            name="manager_phone"
-                            id="manager_phone"
-                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('admin.manager_phone') }}"
-                            value="{{$project['manager_phone']}}"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-link">{{ __('admin.date_begin') }}</label>
-                        <input
-                            type="date"
-                            name="date_begin"
-                            id="date_begin"
-                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('admin.date_begin') }}"
-                            value="{{$project['date_begin']}}"
-                            required
-                        >
-                    </div>
-                    <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-link">{{ __('admin.date_end') }}</label>
-                        <input
-                            type="date"
-                            name="date_end"
-                            id="date_end"
-                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('admin.date_end') }}"
-                            value="{{$project['date_end']}}"
-                            required
-                        >
-                    </div>
-                </div>
+                <h1> {{__('admin.info_ge')}} </h1>
             </div>
         @elseif($lang == 'ru')
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <h1> Rus </h1>
+                <h1> {{__('admin.info_ru')}} </h1>
             </div>
         @elseif($lang == 'en')
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <h1> Eng </h1>
+                <h1> {{__('admin.info_en')}} </h1>
             </div>
         @endif
         <div class="card-body pt-0 pt-md-4">

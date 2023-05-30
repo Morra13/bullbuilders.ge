@@ -53,19 +53,6 @@ class ProjectsController extends Controller
 
         $iProjectId = $obProjects->id;
 
-        if (!empty($request->file('more_img'))) {
-            foreach ($request->file('more_img') as $key => $file) {
-                $obProjectsImg = new ProjectsImg();
-
-                $fileNameMoreImg = $key . time().'_'.$file->getClientOriginalName();
-                $filePathMoreImg = $file->storeAs('/uploads', $fileNameMoreImg , 'public');
-
-                $obProjectsImg->project_id = $iProjectId;
-                $obProjectsImg->img = $filePathMoreImg;
-                $obProjectsImg->save();
-            }
-        }
-
         if (!empty($iProjectId)) {
             $obProjectsGe->project_id   = $iProjectId;
             $obProjectsGe->name         = $request->get('name_ge');
