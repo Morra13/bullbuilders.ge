@@ -7,7 +7,7 @@
             <div class="row d-flex no-gutters">
                 <div class="col-md-6 d-flex">
                     <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end"
-                         style="background-image:url({{ asset('argon') }}/bullbuilders/images/about.jpg);">
+                         style="background-image:url({{ asset('storage') . '/' . $arProject['main_img']}});">
                     </div>
                 </div>
                 <div class="col-md-6 pl-md-5">
