@@ -12,33 +12,35 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
-        <div class="container">
-            @if(!empty($arPartners))
-                @foreach($arPartners as $partner)
-                    <div class="row d-flex no-gutters">
-                        <div class="col-md-6 d-flex">
-                            <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url({{ asset('storage') . '/' . $partner['main_img'] }});">
-                            </div>
-                        </div>
-                        <div class="col-md-6 pl-md-5">
-                            <div class="row justify-content-start py-5">
-                                <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
-                                    <span class="subheading"> {{ $partner['name'] }}</span>
-                                    <h2 class="mb-4">{{ $partner['title'] }}</h2>
-                                    <div class="tab-content bg-light rounded mt-2">
-                                        <div class="tab-pane container p-0 active" id="home1">
-                                            <p>{{ $partner['description'] }}</p>
-                                        </div>
-                                    </div>
+    <div class="site-section">
+        @if(!empty($arPartners))
+            @foreach($arPartners as $key => $partner)
+                <div class="block__73694 mb-2" id="services-section">
+                    <div class="container">
+                        <div class="row d-flex no-gutters align-items-stretch">
+                            @if($key % 2 == 0 || $key === 0)
+                                <div class="img col-12 col-lg-6 block__73422" style="background-image: url({{ asset('storage') . '/' . $partner['main_img']}})" data-aos="fade-right" data-aos-delay="">
                                 </div>
+                            @else
+                                <div class="img col-12 col-lg-6 block__73422 order-lg-2" style="background-image: url({{ asset('storage') . '/' . $partner['main_img']}})" data-aos="fade-left" data-aos-delay="">
+                                </div>
+                            @endif
+                            <div class="col-lg-5 ml-auto p-lg-5 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="">
+                                <h2 class="mb-3 text-black">{{ $partner['name'] }}</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus id dignissimos nemo minus perspiciatis ullam itaque voluptas iure vero, nesciunt unde odit aspernatur distinctio, maiores facere officiis. Cum, esse, iusto?</p>
+                                <p>Minus perspiciatis ullam itaque voluptas iure vero, nesciunt unde odit aspernatur distinctio, maiores facere officiis. Cum, esse, iusto?</p>
+                                <ul class="ul-check primary list-unstyled mt-5">
+                                    <li>Lorem ipsum dolor.</li>
+                                    <li>Quod, amet. Provident.</li>
+                                    <li>Quo, adipisci, quis.</li>
+                                    <li>Cumque perspiciatis, blanditiis?</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <br>
-                @endforeach
-            @endif
-        </div>
-    </section>
+                </div>
+            @endforeach
+        @endif
+    </div>
 
 @endsection
