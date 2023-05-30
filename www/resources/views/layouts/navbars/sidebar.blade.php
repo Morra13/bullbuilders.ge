@@ -89,6 +89,16 @@
                             <i class="ni ni-shop {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProjectsController::ROUTE_PROJECT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.projects') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_CREATE_PARTNER ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\PartnersController::ROUTE_CREATE_PARTNER) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_CREATE_PARTNER ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_partner') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNERS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\PartnersController::ROUTE_PARTNERS) }}">
+                            <i class="ni ni-shop {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNERS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.partners') }}
+                        </a>
+                    </li>
                 </ul>
             @endif
             <ul class="navbar-nav mb-md-3">

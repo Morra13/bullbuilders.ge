@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminCotroller;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\PartnersController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -110,6 +111,9 @@ Route::group(
         Route::get('/project',                [ProjectsController::class, 'project']            )->name(ProjectsController::ROUTE_PROJECT);
         Route::get('/projectUpdate/{id}',     [ProjectsController::class, 'projectUpdate']      )->name(ProjectsController::ROUTE_PROJECT_UPDATE);
         Route::get('/projectUpdateImg/{id}',  [ProjectsController::class, 'projectUpdateImg']   )->name(ProjectsController::ROUTE_PROJECT_UPDATE_IMG);
+        Route::get('/createPartner',          [PartnersController::class, 'createPartner']      )->name(PartnersController::ROUTE_CREATE_PARTNER);
+        Route::get('/partners',               [PartnersController::class, 'partners']           )->name(PartnersController::ROUTE_PARTNERS);
+        Route::get('/partnerUpdate/{id}',     [PartnersController::class, 'partnerUpdate']      )->name(PartnersController::ROUTE_PARTNER_UPDATE);
 
     }
 );
