@@ -1,4 +1,4 @@
-<div class="col-xl-4 order-xl-1">
+<div class="col-xl-3 order-xl-1">
     @csrf
     @method('post')
     <div class="card card-profile shadow"  style="min-height: 700px;">
@@ -28,16 +28,12 @@
                 </div>
             </div>
             <div class="card-body pt-0 pt-md-4">
-                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                    <label class="form-control-label" for="input-name">{{ __('admin.status') }}</label>
-                    <input
-                        type="text"
-                        name="status"
-                        id="input-status"
-                        class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                        placeholder="{{ __('admin.status') }}"
-                        required
-                    >
+                <div class="dropdown p-3">
+                    <label class="form-control-label" for="input-name">{{ __('admin.status')}}</label>
+                    <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
+                        <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
+                        <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
+                    </select>
                 </div>
                 <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
                     <label class="form-control-label" for="input-link">{{ __('admin.manager_phone') }}</label>
@@ -47,6 +43,28 @@
                         id="manager_phone"
                         class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
                         placeholder="{{ __('admin.manager_phone') }}"
+                        required
+                    >
+                </div>
+                <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
+                    <label class="form-control-label" for="input-link">{{ __('admin.date_begin') }}</label>
+                    <input
+                        type="date"
+                        name="date_begin"
+                        id="date_begin"
+                        class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                        placeholder="{{ __('admin.date_begin') }}"
+                        required
+                    >
+                </div>
+                <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
+                    <label class="form-control-label" for="input-link">{{ __('admin.date_end') }}</label>
+                    <input
+                        type="date"
+                        name="date_end"
+                        id="date_end"
+                        class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                        placeholder="{{ __('admin.date_end') }}"
                         required
                     >
                 </div>

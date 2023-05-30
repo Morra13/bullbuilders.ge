@@ -34,17 +34,31 @@ class ProjectsController extends Controller
         $obProjectsRu = new Projects_ru();
         $obProjectsEn = new Projects_en();
 
-        if (!empty($request->file())){
+        if (!empty($request->file('main_img'))){
             $fileName = time().'_'.$request->file('main_img')->getClientOriginalName();
             $filePath = $request->file('main_img')->storeAs('/uploads', $fileName , 'public');
             $obProjects->main_img = $filePath;
-
         }
         $obProjects->status         = $request->get('status');
         $obProjects->manager_phone  = $request->get('manager_phone');
+        $obProjects->date_begin     = $request->get('date_begin');
+        $obProjects->date_end       = $request->get('date_end');
         $obProjects->save();
 
         $iProjectId = $obProjects->id;
+
+        if (!empty($request->file('more_img'))) {
+            foreach ($request->file('more_img') as $key => $file) {
+                $obProjectsImg = new ProjectsImg();
+
+                $fileNameMoreImg = $key . time().'_'.$file->getClientOriginalName();
+                $filePathMoreImg = $file->storeAs('/uploads', $fileNameMoreImg , 'public');
+
+                $obProjectsImg->project_id = $iProjectId;
+                $obProjectsImg->img = $filePathMoreImg;
+                $obProjectsImg->save();
+            }
+        }
 
         if (!empty($iProjectId)) {
             $obProjectsGe->project_id   = $iProjectId;
@@ -154,6 +168,14 @@ class ProjectsController extends Controller
         $obProjectsGe = (new Projects_ge())->where('project_id', $id)->delete();
         $obProjectsRu = (new Projects_ru())->where('project_id', $id)->delete();
         $obProjectsEn = (new Projects_en())->where('project_id', $id)->delete();
+
+        $obProjectsImg = (new ProjectsImg())->where('project_id', $id)->get();
+        foreach ($obProjectsImg as $projectImg) {
+            if (!empty($projectImg->img)) {
+                unlink(storage_path('app/public/' . $projectImg->img));
+            }
+            $projectImg->delete();
+        }
 
         return redirect()->route(\App\Http\Controllers\ProjectsController::ROUTE_PROJECT);
     }

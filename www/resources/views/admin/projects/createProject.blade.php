@@ -23,6 +23,13 @@
                 @foreach($arLang as $key => $lang)
                     @include('admin.projects.createProjectRow', ['lang' => $lang, 'key' => $key,])
                 @endforeach
+                <div class="col-xl-3 order-xl-1">
+                    <div class="card card-profile shadow"  style="min-height: 700px;">
+                        <div class="card-body pt-0 pt-md-4">
+                            <input type="file" name="more_img[]" accept=".jpg,.jpeg,.png" multiple>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
                         <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.create') }}</button>

@@ -56,6 +56,31 @@
                             required
                         >
                     </div>
+
+                    <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
+                        <label class="form-control-label" for="input-link">{{ __('admin.date_begin') }}</label>
+                        <input
+                            type="date"
+                            name="date_begin"
+                            id="date_begin"
+                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                            placeholder="{{ __('admin.date_begin') }}"
+                            value="{{$project['date_begin']}}"
+                            required
+                        >
+                    </div>
+                    <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
+                        <label class="form-control-label" for="input-link">{{ __('admin.date_end') }}</label>
+                        <input
+                            type="date"
+                            name="date_end"
+                            id="date_end"
+                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                            placeholder="{{ __('admin.date_end') }}"
+                            value="{{$project['date_end']}}"
+                            required
+                        >
+                    </div>
                 </div>
             </div>
         @elseif($lang == 'ru')

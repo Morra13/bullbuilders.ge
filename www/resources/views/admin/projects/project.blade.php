@@ -33,12 +33,14 @@
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.status') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.manager_phone') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.description') }}</th>
+                                <th scope="col" class="sort" data-sort="name">{{ __('admin.date_begin') }}</th>
+                                <th scope="col" class="sort" data-sort="name">{{ __('admin.date_end') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.delete') }}</th>
                             </tr>
                             </thead>
                             <tbody class="list">
                             @foreach ($arProjects as $project)
-                                @include('admin.projects.projectsRow', ['project' => $project])
+                                @include('admin.projects.projectRow', ['project' => $project])
                             @endforeach
                             </tbody>
                         </table>

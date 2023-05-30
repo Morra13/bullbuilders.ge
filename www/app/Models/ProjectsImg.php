@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class ProjectsImg
  * @package App\Models
  *
+ * @property int id
  * @property int project_id
  * @property string img
  */
@@ -16,8 +17,6 @@ class ProjectsImg extends Model
 {
     use HasFactory;
 
-    public $primaryKey = null;
-    public $incrementing = false;
     public $timestamps = false;
 
     /**
