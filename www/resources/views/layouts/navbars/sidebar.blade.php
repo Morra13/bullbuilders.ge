@@ -96,7 +96,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNERS ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\PartnersController::ROUTE_PARTNERS) }}">
-                            <i class="ni ni-shop {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNERS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.partners') }}
+                            <i class="far fa-handshake {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNERS ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.partners') }}
                         </a>
                     </li>
                 </ul>

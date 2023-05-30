@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <form method="post" action="{{ route(\App\Http\Controllers\Api\StaffController::ROUTE_CREATE_STAFF) }}" autocomplete="off" enctype="multipart/form-data">
+    <form method="post" action="{{ route(\App\Http\Controllers\Api\PartnersController::ROUTE_CREATE_PARTNER) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
                 <?

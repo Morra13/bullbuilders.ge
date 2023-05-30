@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\ReturnGoodsController;
 use App\Http\Controllers\Api\StaffController;
 use App\Http\Controllers\Api\ReviewsController;
 use App\Http\Controllers\Api\ProjectsController;
+use App\Http\Controllers\Api\PartnersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,9 @@ Route::group(
         Route::get ('/project/delete/{id}',              [ProjectsController::class, 'projectDelete']       )->name(ProjectsController::ROUTE_PROJECT_DELETE);
         Route::post('/project/img/update/{id}',          [ProjectsController::class, 'projectUpdateImg']    )->name(ProjectsController::ROUTE_PROJECT_UPDATE_IMG);
         Route::get ('/project/img/delete/{id}',          [ProjectsController::class, 'projectImgDelete']    )->name(ProjectsController::ROUTE_PROJECT_IMG_DELETE);
+        Route::post('/partners/create',                  [PartnersController::class, 'createPartner']       )->name(PartnersController::ROUTE_CREATE_PARTNER);
+        Route::post('/partners/update',                  [PartnersController::class, 'partnerUpdate']       )->name(PartnersController::ROUTE_PARTNER_UPDATE);
+        Route::get ('/partners/delete/{id}',             [PartnersController::class, 'partnerDelete']       )->name(PartnersController::ROUTE_PARTNER_DELETE);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

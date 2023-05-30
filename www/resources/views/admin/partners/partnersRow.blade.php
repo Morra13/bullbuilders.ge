@@ -2,7 +2,7 @@
     <th scope="row">
         <div class="media align-items-center">
             <a href="{{ route(\App\Http\Controllers\PartnersController::ROUTE_PARTNER_UPDATE, $partner['id']) }}" class="mr-3">
-                <div class="table-avatar" style="background-image: url('{{asset('storage/' . $staff['photo'])}}');"></div>
+                <div class="table-avatar" style="background-image: url('{{asset('storage/' . $partner['main_img'])}}');"></div>
             </a>
             <div class="media-body">
                 <a href="{{ route(\App\Http\Controllers\PartnersController::ROUTE_PARTNER_UPDATE, $partner['id']) }}">
@@ -18,6 +18,6 @@
         {{$partner['description']}}
     </td>
     <td>
-        <a href="{{route(\App\Http\Controllers\Api\StaffController::ROUTE_STAFF_DELETE, $partner['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
+        <a href="{{route(\App\Http\Controllers\Api\PartnersController::ROUTE_PARTNER_DELETE, $partner['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
     </td>
 </tr>

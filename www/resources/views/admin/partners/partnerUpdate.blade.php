@@ -14,10 +14,10 @@
         </div>
     </div>
 
-    <form method="post" action="{{ route(\App\Http\Controllers\Api\StaffController::ROUTE_STAFF_UPDATE) }}" autocomplete="off" enctype="multipart/form-data">
+    <form method="post" action="{{ route(\App\Http\Controllers\Api\PartnersController::ROUTE_PARTNER_UPDATE) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
-                <input name="id" value="{{$partner['ge']['id']}}" hidden>
+                <input name="id" value="{{$arPartner['ge']['id']}}" hidden>
                 @foreach($arPartner as $lang => $partner)
                     @include(
                                 'admin.partners.updatePartnerRow', [

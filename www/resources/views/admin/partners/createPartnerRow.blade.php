@@ -29,11 +29,11 @@
             </div>
         @elseif($key === 1)
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <h1> Rus </h1>
+                <h1> {{__('admin.info_ru')}} </h1>
             </div>
         @elseif($key === 2)
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <h1> Eng </h1>
+                <h1> {{__('admin.info_en')}} </h1>
             </div>
         @endif
         <div class="card-body pt-0 pt-md-4">
