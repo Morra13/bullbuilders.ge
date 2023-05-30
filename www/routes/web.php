@@ -8,7 +8,6 @@ use App\Http\Controllers\InstructionController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SocialController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OffsController;
 use App\Http\Controllers\ReturnGoodsController;
@@ -18,6 +17,8 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\PartnersController;
+use App\Http\Controllers\ProductsController;
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -68,13 +69,6 @@ Route::group(
         Route::get('/instruction/edit/{id}',     [InstructionController::class, 'edit']       )->name(InstructionController::ROUTE_EDIT);
         Route::get('/instruction/download/{id}', [InstructionController::class, 'download']   )->name(InstructionController::ROUTE_DOWNLOAD);
 
-        Route::get('/product/create',            [ProductController::class, 'create']         )->name(ProductController::ROUTE_CREATE);
-        Route::get('/product/create-type',       [ProductController::class, 'createType']     )->name(ProductController::ROUTE_CREATE_TYPE);
-        Route::get('/product/remains',           [ProductController::class, 'remains']        )->name(ProductController::ROUTE_REMAINS);
-        Route::get('/product/debtors',           [ProductController::class, 'debtors']        )->name(ProductController::ROUTE_DEBTORS);
-        Route::get('/product/sales',             [ProductController::class, 'sales']          )->name(ProductController::ROUTE_SALES);
-        Route::get('/product/entrance',          [ProductController::class, 'entrance']       )->name(ProductController::ROUTE_ENTRANCE);
-        Route::get('/product/entranceCheck',     [ProductController::class, 'entranceCheck']  )->name(ProductController::ROUTE_ENTRANCE_CHECK);
         Route::get('/product/orders',            [OrderController::class, 'orders']           )->name(OrderController::ROUTE_ORDERS);
 
         Route::get('/offs/offs',                 [OffsController::class, 'offs']              )->name(OffsController::ROUTE_OFFS);
@@ -114,6 +108,9 @@ Route::group(
         Route::get('/createPartner',          [PartnersController::class, 'createPartner']      )->name(PartnersController::ROUTE_CREATE_PARTNER);
         Route::get('/partner',                [PartnersController::class, 'partner']            )->name(PartnersController::ROUTE_PARTNER);
         Route::get('/partnerUpdate/{id}',     [PartnersController::class, 'partnerUpdate']      )->name(PartnersController::ROUTE_PARTNER_UPDATE);
+        Route::get('/createProduct',          [ProductsController::class, 'createProduct']      )->name(ProductsController::ROUTE_CREATE_PRODUCT);
+        Route::get('/product',                [ProductsController::class, 'product']            )->name(ProductsController::ROUTE_PRODUCT);
+        Route::get('/productUpdate/{id}',     [ProductsController::class, 'productUpdate']      )->name(ProductsController::ROUTE_PRODUCT_UPDATE);
 
     }
 );

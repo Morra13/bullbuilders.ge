@@ -38,12 +38,12 @@ class PartnersController extends Controller
     {
         $arPartners = [];
 
-        $obStaff = new Partners_ge();
+        $obPartners = new Partners_ge();
 
         if (session()->get('lang') == 'ru') {
-            $obStaff = new Partners_ru();
+            $obPartners = new Partners_ru();
         } elseif (session()->get('lang') == 'en') {
-            $obStaff = new Partners_en();
+            $obPartners = new Partners_en();
         }
 
         $iCount = (new Partners())
@@ -63,7 +63,7 @@ class PartnersController extends Controller
             ->get();
 
         foreach ($arPartnersMain as $key => $partner) {
-            $arInfoPartners = $obStaff::all()->where('partner_id', $partner->id)->first();
+            $arInfoPartners = $obPartners::all()->where('partner_id', $partner->id)->first();
 
             $arPartners [$key] = [
                 'id'            => $partner->id,
@@ -87,7 +87,6 @@ class PartnersController extends Controller
             ]
         );
     }
-
 
     /**
      * Обновление партнера

@@ -99,6 +99,16 @@
                             <i class="far fa-handshake {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\PartnersController::ROUTE_PARTNER ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.partners') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductsController::ROUTE_CREATE_PRODUCT ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductsController::ROUTE_CREATE_PRODUCT) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductsController::ROUTE_CREATE_PRODUCT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_product') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductsController::ROUTE_PRODUCT ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\ProductsController::ROUTE_PRODUCT) }}">
+                            <i class="fas fa-clipboard-list {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductsController::ROUTE_PRODUCT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.products') }}
+                        </a>
+                    </li>
                 </ul>
             @endif
             <ul class="navbar-nav mb-md-3">

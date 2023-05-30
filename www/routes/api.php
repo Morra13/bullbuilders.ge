@@ -7,7 +7,6 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ValidationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SocialController;
-use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\BasketController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\EntranceController;
@@ -18,6 +17,7 @@ use App\Http\Controllers\Api\StaffController;
 use App\Http\Controllers\Api\ReviewsController;
 use App\Http\Controllers\Api\ProjectsController;
 use App\Http\Controllers\Api\PartnersController;
+use App\Http\Controllers\Api\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +55,9 @@ Route::group(
         Route::post('/partners/create',                  [PartnersController::class, 'createPartner']       )->name(PartnersController::ROUTE_CREATE_PARTNER);
         Route::post('/partners/update',                  [PartnersController::class, 'partnerUpdate']       )->name(PartnersController::ROUTE_PARTNER_UPDATE);
         Route::get ('/partners/delete/{id}',             [PartnersController::class, 'partnerDelete']       )->name(PartnersController::ROUTE_PARTNER_DELETE);
+        Route::post('/products/create',                  [ProductsController::class, 'createProduct']       )->name(ProductsController::ROUTE_CREATE_PRODUCT);
+        Route::post('/products/update',                  [ProductsController::class, 'productUpdate']       )->name(ProductsController::ROUTE_PRODUCT_UPDATE);
+        Route::get ('/products/delete/{id}',             [ProductsController::class, 'productDelete']       )->name(ProductsController::ROUTE_PRODUCT_DELETE);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);
@@ -66,10 +69,6 @@ Route::group(
         Route::post('/instruction/create',               [InstructionController::class, 'create']  )->name(InstructionController::ROUTE_CREATE);
         Route::post('/instruction/update',               [InstructionController::class, 'update']  )->name(InstructionController::ROUTE_UPDATE);
         Route::post('/instruction/status/{id}/{status}', [InstructionController::class, 'status']  )->name(InstructionController::ROUTE_STATUS);
-
-        Route::post('/product/create',                   [ProductController::class, 'createProduct']    )->name(ProductController::ROUTE_CREATE_PRODUCT);
-        Route::post('/product/create-type',              [ProductController::class, 'createType']       )->name(ProductController::ROUTE_CREATE_TYPE);
-        Route::post('/product/update-product',           [ProductController::class, 'updateProduct']    )->name(ProductController::ROUTE_UPDATE_PRODUCT);
 
         Route::post('/basket/add',                       [BasketController::class, 'addInBasket']       )->name(BasketController::ROUTE_ADD_IN_BASKET);
         Route::post('/basket/update',                    [BasketController::class, 'updateBasket']      )->name(BasketController::ROUTE_UPDATE_BASKET);
