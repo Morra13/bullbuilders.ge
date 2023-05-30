@@ -31,8 +31,8 @@
                 <div class="dropdown p-3">
                     <label class="form-control-label" for="input-name">{{ __('admin.status')}}</label>
                     <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
-                        <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
                         <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
+                        <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
                     </select>
                 </div>
                 <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">

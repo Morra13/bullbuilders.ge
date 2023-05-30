@@ -32,17 +32,20 @@
             </div>
             <div class="card-body pt-0 pt-md-4">
                 <div class="mt-md-2">
-                    <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                        <label class="form-control-label" for="input-name">{{ __('admin.status') }}</label>
-                        <input
-                            type="text"
-                            name="status"
-                            id="input-status"
-                            class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            placeholder="{{ __('admin.status') }}"
-                            value="{{$project['status']}}"
-                            required
-                        >
+                    <div class="dropdown p-3">
+                        <label class="form-control-label" for="input-name">{{ __('admin.status')}}</label>
+                        @if($project['status'] == "completed")
+                            <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
+                                <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
+                                <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
+                            </select>
+                        @elseif($project['status'] == "incomplete")
+                            <select class="btn btn-outline-primary dropdown-toggle" name="status" id="status">
+                                <option class="btn btn-danger" value="incomplete">{{__('admin.incomplete')}}</option>
+                                <option class="btn btn-success" value="completed">{{__('admin.completed')}}</option>
+                            </select>
+                        @endif
+
                     </div>
                     <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
                         <label class="form-control-label" for="input-link">{{ __('admin.manager_phone') }}</label>

@@ -12,7 +12,11 @@
         </div>
     </th>
     <td>
-        <span>{{ $project['status'] }}</span>
+        @if($project['status'] == 'completed')
+            <span class="btn-success">{{ __('admin.'. $project['status'])  }}</span>
+        @else
+            <span class="btn-danger">{{ __('admin.'. $project['status'])  }}</span>
+        @endif
     </td>
     <td>
         {{$project['manager_phone']}}

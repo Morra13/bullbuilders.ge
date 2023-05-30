@@ -113,6 +113,8 @@ class ProjectsController extends Controller
         }
         $obProjects->status         = $request->get('status');
         $obProjects->manager_phone  = $request->get('manager_phone');
+        $obProjects->date_begin     = $request->get('date_begin');
+        $obProjects->date_end       = $request->get('date_end');
         $obProjects->update();
 
         $obProjectsGe = (new Projects_ge())
