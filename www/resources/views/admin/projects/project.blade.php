@@ -35,6 +35,7 @@
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.description') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.date_begin') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.date_end') }}</th>
+                                <th scope="col" class="sort" data-sort="name">{{ __('admin.more_img') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.delete') }}</th>
                             </tr>
                             </thead>

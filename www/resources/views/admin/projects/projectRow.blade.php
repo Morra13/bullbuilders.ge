@@ -31,6 +31,11 @@
         <span>{{$project['date_end']}}</span>
     </td>
     <td>
+        <a href="{{ route(\App\Http\Controllers\ProjectsController::ROUTE_PROJECT_UPDATE_IMG, $project['id']) }}" class="mr-3">
+            <span> {{ __('admin.more_img') }} </span>
+        </a>
+    </td>
+    <td>
         <a href="{{route(\App\Http\Controllers\Api\ProjectsController::ROUTE_PROJECT_DELETE, $project['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
     </td>
 </tr>

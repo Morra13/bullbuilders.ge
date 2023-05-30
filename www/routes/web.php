@@ -98,17 +98,18 @@ Route::group(
         Route::get('/transaction/admin/list', [TransactionController::class, 'adminList'])->name(TransactionController::ROUTE_ADMIN_LIST);
         Route::get('/settings/admin/index',   [SettingsController::class, 'adminIndex']  )->name(SettingsController::ROUTE_ADMIN_INDEX);
 
-        Route::get('/admin',                  [AdminCotroller::class, 'admin']              )->name(AdminCotroller::ROUTE_ADMIN);
-        Route::get('/admin/user/{id}',        [AdminCotroller::class, 'userRoleUpdate']     )->name(AdminCotroller::ROUTE_USER_ROLE_UPDATE);
-        Route::get('/createStaff',            [StaffController::class, 'createStaff']       )->name(StaffController::ROUTE_CREATE_STAFF);
-        Route::get('/staff',                  [StaffController::class, 'staff']             )->name(StaffController::ROUTE_STAFF);
-        Route::get('/staffUpdate/{id}',       [StaffController::class, 'staffUpdate']       )->name(StaffController::ROUTE_STAFF_UPDATE);
-        Route::get('/createReviews',          [ReviewsController::class, 'createReviews']   )->name(ReviewsController::ROUTE_CREATE_REVIEWS);
-        Route::get('/reviews',                [ReviewsController::class, 'reviews']         )->name(ReviewsController::ROUTE_REVIEWS);
-        Route::get('/reviewsUpdate/{id}',     [ReviewsController::class, 'reviewsUpdate']   )->name(ReviewsController::ROUTE_REVIEWS_UPDATE);
-        Route::get('/createProject',          [ProjectsController::class, 'createProject']  )->name(ProjectsController::ROUTE_CREATE_PROJECT);
-        Route::get('/project',                [ProjectsController::class, 'project']        )->name(ProjectsController::ROUTE_PROJECT);
-        Route::get('/projectUpdate/{id}',     [ProjectsController::class, 'projectUpdate']  )->name(ProjectsController::ROUTE_PROJECT_UPDATE);
+        Route::get('/admin',                  [AdminCotroller::class, 'admin']                  )->name(AdminCotroller::ROUTE_ADMIN);
+        Route::get('/admin/user/{id}',        [AdminCotroller::class, 'userRoleUpdate']         )->name(AdminCotroller::ROUTE_USER_ROLE_UPDATE);
+        Route::get('/createStaff',            [StaffController::class, 'createStaff']           )->name(StaffController::ROUTE_CREATE_STAFF);
+        Route::get('/staff',                  [StaffController::class, 'staff']                 )->name(StaffController::ROUTE_STAFF);
+        Route::get('/staffUpdate/{id}',       [StaffController::class, 'staffUpdate']           )->name(StaffController::ROUTE_STAFF_UPDATE);
+        Route::get('/createReviews',          [ReviewsController::class, 'createReviews']       )->name(ReviewsController::ROUTE_CREATE_REVIEWS);
+        Route::get('/reviews',                [ReviewsController::class, 'reviews']             )->name(ReviewsController::ROUTE_REVIEWS);
+        Route::get('/reviewsUpdate/{id}',     [ReviewsController::class, 'reviewsUpdate']       )->name(ReviewsController::ROUTE_REVIEWS_UPDATE);
+        Route::get('/createProject',          [ProjectsController::class, 'createProject']      )->name(ProjectsController::ROUTE_CREATE_PROJECT);
+        Route::get('/project',                [ProjectsController::class, 'project']            )->name(ProjectsController::ROUTE_PROJECT);
+        Route::get('/projectUpdate/{id}',     [ProjectsController::class, 'projectUpdate']      )->name(ProjectsController::ROUTE_PROJECT_UPDATE);
+        Route::get('/projectUpdateImg/{id}',  [ProjectsController::class, 'projectUpdateImg']   )->name(ProjectsController::ROUTE_PROJECT_UPDATE_IMG);
 
     }
 );

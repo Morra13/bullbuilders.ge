@@ -19,6 +19,12 @@ class ProjectsController extends Controller
     const ROUTE_PROJECT_UPDATE        = 'api.admin.projectUpdate';
 
     /** @var string  */
+    const ROUTE_PROJECT_UPDATE_IMG    = 'api.admin.projectUpdateImg';
+
+    /** @var string  */
+    const ROUTE_PROJECT_IMG_DELETE    = 'api.admin.projectImgDelete';
+
+    /** @var string  */
     const ROUTE_PROJECT_DELETE        = 'api.admin.projectDelete';
 
     /**
@@ -153,6 +159,48 @@ class ProjectsController extends Controller
 
         return redirect()->route(\App\Http\Controllers\ProjectsController::ROUTE_PROJECT);
     }
+
+    /**
+     * Обновление фотографий проекта
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function projectUpdateImg(Request $request, $id)
+    {
+        if (!empty($request->file('more_img'))) {
+            foreach ($request->file('more_img') as $key => $file) {
+                $obProjectsImg = new ProjectsImg();
+
+                $fileNameMoreImg = $key . time().'_'.$file->getClientOriginalName();
+                $filePathMoreImg = $file->storeAs('/uploads', $fileNameMoreImg , 'public');
+
+                $obProjectsImg->project_id = $id;
+                $obProjectsImg->img = $filePathMoreImg;
+                $obProjectsImg->save();
+            }
+        }
+
+        return redirect()->back();
+    }
+
+    /**
+     * Удаление фотографии
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function projectImgDelete($id)
+    {
+        $obProjectImg = (new ProjectsImg())->where('id', $id)->first();
+        if (!empty($obProjectImg->img)) {
+            unlink(storage_path('app/public/' . $obProjectImg->img));
+        }
+        $obProjectImg->delete();
+
+        return redirect()->back();
+    }
+
 
     /**
      * Удаление проека

@@ -6,6 +6,7 @@ use App\Models\Projects;
 use App\Models\Projects_en;
 use App\Models\Projects_ge;
 use App\Models\Projects_ru;
+use App\Models\ProjectsImg;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
@@ -19,6 +20,9 @@ class ProjectsController extends Controller
 
     /** @var string  */
     const ROUTE_PROJECT_UPDATE        = 'admin.projects.projectUpdate';
+
+    /** @var string  */
+    const ROUTE_PROJECT_UPDATE_IMG    = 'admin.projects.projectUpdateImg';
 
     /**
      * Создать сотрудника
@@ -93,7 +97,7 @@ class ProjectsController extends Controller
     }
 
     /**
-     * Карточка пользователя и возможность изменить роль
+     * Страница обновления проекта
      *
      * @param int $id
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
@@ -142,6 +146,28 @@ class ProjectsController extends Controller
             'admin.projects.projectUpdate',
             [
                 'arProjects'  => $arProjects,
+            ]
+        );
+    }
+
+    /**
+     * Страница обновления дополнительных фото
+     *
+     * @param int $id
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function projectUpdateImg(int $id)
+    {
+        $arProjectsImg = [];
+
+        $obProjectsImg = new ProjectsImg();
+        $arProjectsImg = $obProjectsImg::all()->where('project_id', $id);
+
+        return view(
+            'admin.projects.projectUpdateImg',
+            [
+                'id'            => $id,
+                'arProjectsImg' => $arProjectsImg,
             ]
         );
     }
