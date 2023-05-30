@@ -122,7 +122,7 @@ class PartnersController extends Controller
             )
         ;
 
-        return redirect()->route(\App\Http\Controllers\PartnersController::ROUTE_PARTNERS);
+        return redirect()->route(\App\Http\Controllers\PartnersController::ROUTE_PARTNER);
     }
 
     /**
@@ -142,7 +142,7 @@ class PartnersController extends Controller
         $obPartnerRu = (new Partners_ru())->where('partner_id', $id)->delete();
         $obPartnerEn = (new Partners_en())->where('partner_id', $id)->delete();
 
-        return redirect()->route(\App\Http\Controllers\PartnersController::ROUTE_PARTNERS);
+        return redirect()->route(\App\Http\Controllers\PartnersController::ROUTE_PARTNER);
     }
 
 }

@@ -14,7 +14,7 @@ class PartnersController extends Controller
     const ROUTE_CREATE_PARTNER        = 'admin.partners.createPartner';
 
     /** @var string  */
-    const ROUTE_PARTNERS              = 'admin.partners.partners';
+    const ROUTE_PARTNER              = 'admin.partners.partner';
 
     /** @var string  */
     const ROUTE_PARTNER_UPDATE        = 'admin.partners.partnerUpdate';
@@ -34,7 +34,7 @@ class PartnersController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function partners()
+    public function partner()
     {
         $arPartners = [];
 
@@ -75,7 +75,7 @@ class PartnersController extends Controller
         }
 
         return view(
-            'admin.partners.partners',
+            'admin.partners.partner',
             [
                 'arPartners'    => $arPartners,
                 'pagination'    => [

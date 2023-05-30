@@ -112,7 +112,7 @@ Route::group(
         Route::get('/projectUpdate/{id}',     [ProjectsController::class, 'projectUpdate']      )->name(ProjectsController::ROUTE_PROJECT_UPDATE);
         Route::get('/projectUpdateImg/{id}',  [ProjectsController::class, 'projectUpdateImg']   )->name(ProjectsController::ROUTE_PROJECT_UPDATE_IMG);
         Route::get('/createPartner',          [PartnersController::class, 'createPartner']      )->name(PartnersController::ROUTE_CREATE_PARTNER);
-        Route::get('/partners',               [PartnersController::class, 'partners']           )->name(PartnersController::ROUTE_PARTNERS);
+        Route::get('/partner',                [PartnersController::class, 'partner']            )->name(PartnersController::ROUTE_PARTNER);
         Route::get('/partnerUpdate/{id}',     [PartnersController::class, 'partnerUpdate']      )->name(PartnersController::ROUTE_PARTNER_UPDATE);
 
     }
