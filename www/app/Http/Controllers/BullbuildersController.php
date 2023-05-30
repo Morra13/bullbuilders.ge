@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partners;
+use App\Models\Partners_en;
+use App\Models\Partners_ge;
+use App\Models\Partners_ru;
 use App\Models\Projects;
 use App\Models\Projects_en;
 use App\Models\Projects_ge;
@@ -100,9 +104,56 @@ class BullbuildersController extends Controller
      */
     public function partners()
     {
+        $arPartners = [];
+
         $page = 'partners';
-        return view('bullbuilders.partners', [
-                'page'  => $page,
+
+        $obPartners = new Partners_ge();
+
+        if (session()->get('lang') == 'ru') {
+            $obPartners = new Partners_ru();
+        } elseif (session()->get('lang') == 'en') {
+            $obPartners = new Partners_en();
+        }
+
+        $iCount = (new Partners())
+            ->get()
+            ->count();
+
+        $iPage = $_REQUEST['page'] ?? 1;
+
+        if (($iPage - 1) * self::TABLE_ROWS_LIMIT > $iCount) {
+            $iPage = 1;
+        }
+
+        $arPartnersMain = (new Partners())
+            ->skip(($iPage - 1) * self::TABLE_ROWS_LIMIT)
+            ->take(self::TABLE_ROWS_LIMIT)
+            ->orderByDesc('created_at')
+            ->get();
+
+        foreach ($arPartnersMain as $key => $partner) {
+            $arInfoPartners = $obPartners::all()->where('partner_id', $partner->id)->first();
+
+            $arPartners [$key] = [
+                'id'            => $partner->id,
+                'main_img'      => $partner->main_img,
+                'name'          => $arInfoPartners['name'],
+                'title'         => $arInfoPartners['title'],
+                'description'   => $arInfoPartners['description'],
+            ];
+        }
+
+        return view('bullbuilders.partners',
+            [
+                'page'    => $page,
+                'arPartners'    => $arPartners,
+                'pagination'    => [
+                    'total'       => $iCount,
+                    'limit'       => self::TABLE_ROWS_LIMIT,
+                    'page_count'  => ceil($iCount / self::TABLE_ROWS_LIMIT),
+                    'page'        => $iPage,
+                ]
             ]
         );
     }
