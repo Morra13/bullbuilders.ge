@@ -66,5 +66,10 @@ return [
     'reset_password'        => 'პაროლის შეცვლა',
     'user_information'      => 'მომხმარებლის ინფორმაცია',
     'new_password'          => 'ახალი პაროლი',
+    'sliders'               => 'სლაიდები',
+    'subtitle'              => 'ქვე სათაური',
+    'create_slider'         => 'სლაიდერის შექმნა',
+    'id'                    => 'id',
+    'update_slider'         => 'სლაიდერის განახლება',
 
 ];

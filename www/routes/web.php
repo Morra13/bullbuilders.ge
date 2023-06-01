@@ -18,6 +18,7 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SliderController;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -111,6 +112,9 @@ Route::group(
         Route::get('/createProduct',          [ProductsController::class, 'createProduct']      )->name(ProductsController::ROUTE_CREATE_PRODUCT);
         Route::get('/product',                [ProductsController::class, 'product']            )->name(ProductsController::ROUTE_PRODUCT);
         Route::get('/productUpdate/{id}',     [ProductsController::class, 'productUpdate']      )->name(ProductsController::ROUTE_PRODUCT_UPDATE);
+        Route::get('/createSlider',           [SliderController::class, 'createSlider']         )->name(SliderController::ROUTE_CREATE_SLIDER);
+        Route::get('/slider',                 [SliderController::class, 'slider']               )->name(SliderController::ROUTE_SLIDER);
+        Route::get('/updateSlider/{id}',      [SliderController::class, 'updateSlider']         )->name(SliderController::ROUTE_UPDATE_SLIDER);
 
     }
 );

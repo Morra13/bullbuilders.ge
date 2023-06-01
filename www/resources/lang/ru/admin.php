@@ -66,5 +66,10 @@ return [
     'reset_password'        => 'Сброс пароля',
     'user_information'      => 'Информация пользователя',
     'new_password'          => 'Новый пароль',
+    'sliders'               => 'Слайдеры',
+    'subtitle'              => 'Подзаголовок',
+    'create_slider'         => 'Создать сайдер',
+    'id'                    => 'id',
+    'update_slider'         => 'Обновить слайдер',
 
 ];

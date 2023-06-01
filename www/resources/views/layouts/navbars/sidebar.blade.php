@@ -109,6 +109,16 @@
                             <i class="fas fa-clipboard-list {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\ProductsController::ROUTE_PRODUCT ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.products') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\SliderController::ROUTE_CREATE_SLIDER ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\SliderController::ROUTE_CREATE_SLIDER) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\SliderController::ROUTE_CREATE_SLIDER ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_slider') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\SliderController::ROUTE_SLIDER ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\SliderController::ROUTE_SLIDER) }}">
+                            <i class="fas fa-clone {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\SliderController::ROUTE_SLIDER ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.sliders') }}
+                        </a>
+                    </li>
                 </ul>
             @endif
             <ul class="navbar-nav mb-md-3">

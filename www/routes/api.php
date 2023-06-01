@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\ReviewsController;
 use App\Http\Controllers\Api\ProjectsController;
 use App\Http\Controllers\Api\PartnersController;
 use App\Http\Controllers\Api\ProductsController;
+use App\Http\Controllers\Api\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,9 @@ Route::group(
         Route::post('/products/create',                  [ProductsController::class, 'createProduct']       )->name(ProductsController::ROUTE_CREATE_PRODUCT);
         Route::post('/products/update',                  [ProductsController::class, 'productUpdate']       )->name(ProductsController::ROUTE_PRODUCT_UPDATE);
         Route::get ('/products/delete/{id}',             [ProductsController::class, 'productDelete']       )->name(ProductsController::ROUTE_PRODUCT_DELETE);
+        Route::post('/slider/create',                    [SliderController::class, 'createSlider']          )->name(SliderController::ROUTE_CREATE_SLIDER);
+        Route::post('/slider/update',                    [SliderController::class, 'updateSlider']          )->name(SliderController::ROUTE_UPDATE_SLIDER);
+        Route::get ('/slider/delete/{id}',               [SliderController::class, 'deleteSlider']          )->name(SliderController::ROUTE_DELETE_SLIDER);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);
