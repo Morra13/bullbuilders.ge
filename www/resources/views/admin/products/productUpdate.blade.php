@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('admin.product_update')])
+@extends('layouts.app', ['title' => __('admin.update_product')])
 
 @section('content')
     <div class="header pb-8 pt-5 d-flex align-items-center" style="background-image: url(../argon/img/theme/instagram-1.jpg); background-size: cover; background-position: center top;">
@@ -8,7 +8,7 @@
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-white">{{__('admin.product_update')}}</h1>
+                    <h1 class="text-white">{{__('admin.update_product')}}</h1>
                 </div>
             </div>
         </div>

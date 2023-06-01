@@ -134,7 +134,7 @@ class ProductsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function partnerDelete($id)
+    public function productDelete($id)
     {
         $obProduct = (new Products())->where('id', $id)->first();
         if (!empty($obProduct['main_img'])) {
