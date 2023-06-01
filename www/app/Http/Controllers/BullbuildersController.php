@@ -54,34 +54,16 @@ class BullbuildersController extends Controller
     public function about()
     {
         $page = 'about';
-        $arReviews = [];
         $arStaff = [];
 
-        $obReviews = new Reviews_ge();
         $obStaff = new Staff_ge();
-
         if (session()->get('lang') == 'ru') {
-            $obReviews = new Reviews_ru();
             $obStaff = new Staff_ru();
         } elseif (session()->get('lang') == 'en') {
-            $obReviews = new Reviews_en();
             $obStaff = new Staff_en();
         }
 
-        $arReviewsMain = Reviews::orderBy('id', 'desc')->take(5)->get();
         $arStaffMain = Staff::all();
-
-        foreach ($arReviewsMain as $key => $review) {
-            $arInfo = $obReviews::all()->where('review_id', $review->id)->first();
-            $arReviews [$key] = [
-                'id'            => $review->id,
-                'photo'         => $review->photo,
-                'name'          => $arInfo->name,
-                'surname'       => $arInfo->surname,
-                'position'      => $arInfo->position,
-                'comment'       => $arInfo->comment,
-            ];
-        }
 
         foreach ($arStaffMain as $key => $staff) {
             $arInfoStaff = $obStaff::all()->where('staff_id', $staff->id)->first();
@@ -97,7 +79,6 @@ class BullbuildersController extends Controller
         }
         return view('bullbuilders.about' , [
                 'page'          => $page,
-                'arReviews'     => $arReviews,
                 'arStaff'       => $arStaff,
             ]
         );

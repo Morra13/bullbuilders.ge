@@ -3,6 +3,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Basket;
 use App\Models\Debtors;
+use App\Models\Reviews;
+use App\Models\Reviews_ge;
+use App\Models\Reviews_ru;
+use App\Models\Reviews_en;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -48,8 +52,31 @@ class PublicController extends Controller
     public function index()
     {
         $page = 'main';
+        $arReviews = [];
+
+        $obReviews = new Reviews_ge();
+        if (session()->get('lang') == 'ru') {
+            $obReviews = new Reviews_ru();
+        } elseif (session()->get('lang') == 'en') {
+            $obReviews = new Reviews_en();
+        }
+
+        $arReviewsMain = Reviews::orderBy('id', 'desc')->take(5)->get();
+
+        foreach ($arReviewsMain as $key => $review) {
+            $arInfo = $obReviews::all()->where('review_id', $review->id)->first();
+            $arReviews [$key] = [
+                'id'            => $review->id,
+                'photo'         => $review->photo,
+                'name'          => $arInfo->name,
+                'surname'       => $arInfo->surname,
+                'position'      => $arInfo->position,
+                'comment'       => $arInfo->comment,
+            ];
+        }
         return view('public.index', [
-            'page'  => $page,
+            'page'      => $page,
+            'arReviews' => $arReviews,
             ]
         );
     }
