@@ -1,7 +1,7 @@
 @extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest', ['title' => 'Change password'])
+    @include('layouts.headers.guest', ['title' => __('admin.change_password')])
 
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
@@ -23,12 +23,12 @@
                                 @method('post')
                                 <div class="pl-lg-4">
                                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label class="form-control-label" for="input-password">{{ __('New Password') }}</label>
+                                        <label class="form-control-label" for="input-password">{{ __('admin.new_password') }}</label>
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('New Password') }}" value="" required>
+                                            <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('admin.new_password') }}" value="" required>
                                         </div>
                                         @if ($errors->has('password'))
                                             <span class="invalid-feedback" role="alert">
@@ -37,16 +37,16 @@
                                         @endif
                                     </div>
 
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm New Password') }}</label>
+                                    <label class="form-control-label" for="input-password-confirmation">{{ __('admin.сonfirm_password') }}</label>
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm New Password') }}" value="" required>
+                                        <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('admin.сonfirm_password') }}" value="" required>
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-creatory mt-4">{{ __('Change password') }}</button>
+                                        <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.change_password') }}</button>
                                     </div>
                                 </div>
                             </form>

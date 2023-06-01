@@ -7,7 +7,7 @@
             <div class="header-body text-center mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">{{ __('Registration') }}</h1>
+                        <h1 class="text-white">{{ __('admin.register') }}</h1>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                                     </div>
                                     <input
                                         class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Name') }}"
+                                        placeholder="{{ __('admin.name') }}"
                                         type="text"
                                         name="name"
                                         id="name"
@@ -57,7 +57,7 @@
                                     </div>
                                     <input
                                         class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Email') }}"
+                                        placeholder="{{ __('admin.email') }}"
                                         type="email"
                                         name="email"
                                         id="email"
@@ -75,7 +75,7 @@
                                     </div>
                                     <input
                                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Password') }}"
+                                        placeholder="{{ __('admin.password') }}"
                                         type="password"
                                         name="password"
                                         id="password"
@@ -93,7 +93,7 @@
                                     </div>
                                     <input
                                         class="form-control"
-                                        placeholder="{{ __('Confirm Password') }}"
+                                            placeholder="{{ __('admin.сonfirm_password') }}"
                                         type="password"
                                         name="password_confirmation"
                                         id="password_confirmation"
@@ -101,18 +101,8 @@
                                     >
                                 </div>
                             </div>
-                            <div class="row my-4">
-                                <div class="col-12">
-                                    <div class="custom-control custom-control-alternative custom-checkbox">
-                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox" required>
-                                        <label class="custom-control-label" for="customCheckRegister">
-                                            <span class="text-muted">{{ __('I agree with the') }} <a href="#!" data-toggle="modal" data-target="#modal-policy">{{ __('Privacy Policy') }}</a></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-creatory mt-4">{{ __('Create account') }}</button>
+                                <button type="submit" class="btn btn-creatory mt-4">{{ __('admin.create_account') }}</button>
                             </div>
                         </form>
                     </div>

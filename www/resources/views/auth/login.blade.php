@@ -7,7 +7,7 @@
             <div class="header-body text-center mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">{{ __('Login') }}</h1>
+                        <h1 class="text-white">{{ __('admin.login') }}</h1>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" value="admin@argon.com" required>
+                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('admin.email') }}" type="email" name="email" value="{{ old('email') }}" value="admin@argon.com" required>
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -46,7 +46,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" value="secret" required>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('admin.password') }}" type="password" required>
                                 </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -54,14 +54,8 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                <input class="custom-control-input" name="remember" id="customCheckLogin" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label" for="customCheckLogin">
-                                    <span class="text-muted">{{ __('Remember me') }}</span>
-                                </label>
-                            </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-creatory my-4">{{ __('Sign in') }}</button>
+                                <button type="submit" class="btn btn-creatory my-4">{{ __('admin.login') }}</button>
                             </div>
                         </form>
                     </div>
@@ -70,13 +64,13 @@
                     <div class="col-6">
                         @if (Route::has('password.request'))
                             <a href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_PASSWORD_REQUEST) }}" class="text-light">
-                                <small>{{ __('Forgot password?') }}</small>
+                                <small>{{ __('admin.forgot_password') }}</small>
                             </a>
                         @endif
                     </div>
                     <div class="col-6 text-right">
                         <a href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_REGISTER) }}" class="text-light">
-                            <small>{{ __('Create new account') }}</small>
+                            <small>{{ __('admin.create_account') }}</small>
                         </a>
                     </div>
                 </div>

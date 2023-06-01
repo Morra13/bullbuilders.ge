@@ -1,8 +1,8 @@
 @extends('layouts.app', ['title' => __('User Profile')])
 @section('content')
     @include('user.partials.header', [
-        'title' => __('Hello') . ', '. auth()->user()->name,
-        'description' => __('Здарова.'),
+        'title' => __('admin.hello') . ', '. auth()->user()->name,
+        'description' => __(' '),
         'class' => 'col-lg-7'
     ])
 
@@ -33,8 +33,7 @@
 
                     <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                         <div class="d-flex justify-content-between">
-                                                        <a href="#" class="btn btn-sm btn-info mr-4">{{ __( auth()->user()->role) }}</a>
-{{--                                                        <a href="#" class="btn btn-sm btn-default float-right">{{ __('Message') }}</a>--}}
+                            <a href="#" class="btn btn-sm btn-info mr-4">{{ auth()->user()->role }}</a>
                         </div>
                     </div>
                     <div class="card-body pt-0 pt-md-4">
@@ -60,17 +59,17 @@
                             @csrf
                             @method('post')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('admin.user_information') }}</h6>
 
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
+                                    <label class="form-control-label" for="input-name">{{ __('admin.name') }}</label>
                                     <input
                                         type="text"
                                         name="name"
                                         id="input-name"
                                         class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Name') }}"
+                                        placeholder="{{ __('admin.name') }}"
                                         value="{{ old('name', auth()->user()->name) }}" required
                                     >
 
@@ -80,12 +79,12 @@
                                         </span>
                                     @endif
                                 </div>
-                                <label class="form-control-label" for="email">{{ __('Email') }}</label>
+                                <label class="form-control-label" for="email">{{ __('admin.email') }}</label>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <div class="input-group input-group-alternative mb-3">
                                         <input
                                             class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __('Email') }}"
+                                            placeholder="{{ __('admin.email') }}"
                                             type="email"
                                             name="email"
                                             id="email"

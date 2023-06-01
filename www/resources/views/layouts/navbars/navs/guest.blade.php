@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="/">
-                            <img src="{{ asset('argon') }}/img/brand/logo_4.png">
+                            <img src="{{ asset('argon') }}/img/brand/logo_5.png">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -28,13 +28,13 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_REGISTER) }}">
                         <i class="ni ni-circle-08"></i>
-                        <span class="nav-link-inner--text">{{ __('Register') }}</span>
+                        <span class="nav-link-inner--text">{{ __('admin.register') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_LOGIN) }}">
                         <i class="ni ni-key-25"></i>
-                        <span class="nav-link-inner--text">{{ __('Login') }}</span>
+                        <span class="nav-link-inner--text">{{ __('admin.login') }}</span>
                     </a>
                 </li>
             </ul>

@@ -1,7 +1,7 @@
 @extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest', ['title' => 'Reset password'])
+    @include('layouts.headers.guest', ['title' => __('admin.reset_password')])
 
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
@@ -27,7 +27,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
+                                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('admin.email') }}" type="email" name="email" value="{{ old('email') }}" required>
                                     </div>
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                                     @endif
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-creatory my-4">{{ __('Send Password Reset Link') }}</button>
+                                    <button type="submit" class="btn btn-creatory my-4">{{ __('admin.send_password_reset') }}</button>
                                 </div>
                             </form>
                         @endif
