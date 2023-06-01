@@ -31,6 +31,6 @@ class AdminArea extends Middleware
             return $next($request);
         }
 
-        abort(403);
+        return redirect()->route(\App\Http\Controllers\UserController::ROUTE_EDIT);
     }
 }

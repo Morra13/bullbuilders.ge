@@ -57,7 +57,7 @@ return [
     'price'                 => 'ფასი',
     'hello'                 => 'სალამი',
     'register'              => 'რეგისტრაცია',
-    'login'                 => 'გასვლა',
+    'login'                 => 'შესვლა',
     'password'              => 'პაროლი',
     'сonfirm_password'      => 'პაროლის დაზუსტება',
     'create_account'        => 'აქაუნთის შექმნა',
