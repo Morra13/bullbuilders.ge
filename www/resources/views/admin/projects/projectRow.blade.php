@@ -21,9 +21,9 @@
     <td>
         {{$project['manager_phone']}}
     </td>
-    <td>
-        <span> {{ $project['description'] }} </span>
-    </td>
+{{--    <td>--}}
+{{--        <span> {{ $project['description'] }} </span>--}}
+{{--    </td>--}}
     <td>
         <span>{{ $project['date_begin'] }}</span>
     </td>
