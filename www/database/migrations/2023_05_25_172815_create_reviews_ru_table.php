@@ -19,7 +19,7 @@ class CreateReviewsRuTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('position')->nullable();
-            $table->string('comment');
+            $table->longText('comment');
         });
     }
 

@@ -19,7 +19,7 @@ class CreateProjectsRuTable extends Migration
             $table->string('name');
             $table->string('manager');
             $table->string('address');
-            $table->string('description');
+            $table->longText('description');
         });
     }
 

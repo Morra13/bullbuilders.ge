@@ -19,7 +19,7 @@ class CreateStaffRuTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('position');
-            $table->string('comment');
+            $table->longText('comment');
         });
     }
 

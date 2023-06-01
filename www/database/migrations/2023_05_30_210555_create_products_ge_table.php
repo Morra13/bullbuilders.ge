@@ -18,7 +18,7 @@ class CreateProductsGeTable extends Migration
             $table->integer('product_id');
             $table->string('name');
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
         });
     }
 

@@ -18,7 +18,7 @@ class CreatePartnersEnTable extends Migration
             $table->integer('partner_id');
             $table->string('name');
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
         });
     }
 
