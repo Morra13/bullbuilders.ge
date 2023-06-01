@@ -26,6 +26,21 @@
             <!-- Navbar items -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ge') }}">
+                        <span class="flag-icon flag-icon-ge"></span> Geo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ru') }}">
+                        <span class="flag-icon flag-icon-ru"></span> Ru
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'en') }}">
+                        <span class="flag-icon flag-icon-us"></span> Eng
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route(\App\Http\Controllers\DefaultController::ROUTE_REGISTER) }}">
                         <i class="ni ni-circle-08"></i>
                         <span class="nav-link-inner--text">{{ __('admin.register') }}</span>
