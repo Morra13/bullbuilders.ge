@@ -175,6 +175,7 @@ class CharityController extends Controller
             $charityImg->delete();
         }
 
+        $obComment = (new Charity_comment())->where('charity_id', $id)->delete();
 
         return redirect()->route(\App\Http\Controllers\CharityController::ROUTE_CHARITY);
     }
