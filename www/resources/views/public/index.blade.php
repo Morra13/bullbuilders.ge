@@ -1,9 +1,15 @@
 @extends('bullbuilders.header', ['title' => __('nav.main')])
 
 @section('content')
-
-    @include('bullbuilders.slider')
-
+    @if(!empty($arSlider))
+        <div class="hero-wrap">
+            <div class="home-slider owl-carousel">
+                @foreach($arSlider as $slider)
+                    @include('bullbuilders.slider', ['slider' => $slider] )
+                @endforeach
+            </div>
+        </div>
+    @endif
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
             <div class="row">

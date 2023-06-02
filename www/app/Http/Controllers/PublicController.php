@@ -7,6 +7,7 @@ use App\Models\Reviews;
 use App\Models\Reviews_ge;
 use App\Models\Reviews_ru;
 use App\Models\Reviews_en;
+use App\Models\Slider;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -53,6 +54,31 @@ class PublicController extends Controller
     {
         $page = 'main';
         $arReviews = [];
+        $arSlider = [];
+
+        $obSlider = (new Slider())->all();
+
+        foreach ($obSlider as $slider) {
+            if (session()->get('lang') == 'ge')
+                $arSlider [] = [
+                    'main_img'  => $slider['main_img'],
+                    'title'     => $slider['title_ge'],
+                    'subtitle'  => $slider['subtitle_ge'],
+                ];
+            elseif (session()->get('lang') == 'ru') {
+                $arSlider [] = [
+                    'main_img'  => $slider['main_img'],
+                    'title'     => $slider['title_ru'],
+                    'subtitle'  => $slider['subtitle_ru'],
+                ];
+            } elseif (session()->get('lang') == 'en') {
+                $arSlider [] = [
+                    'main_img'  => $slider['main_img'],
+                    'title'     => $slider['title_en'],
+                    'subtitle'  => $slider['subtitle_en'],
+                ];
+            }
+        }
 
         $obReviews = new Reviews_ge();
         if (session()->get('lang') == 'ru') {
@@ -77,6 +103,7 @@ class PublicController extends Controller
         return view('public.index', [
             'page'      => $page,
             'arReviews' => $arReviews,
+            'arSlider'  => $arSlider,
             ]
         );
     }
