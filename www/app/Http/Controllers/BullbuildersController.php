@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Charity;
+use App\Models\Charity_en;
+use App\Models\Charity_ge;
+use App\Models\Charity_img;
+use App\Models\Charity_ru;
 use App\Models\Partners;
 use App\Models\Partners_en;
 use App\Models\Partners_ge;
@@ -15,10 +20,6 @@ use App\Models\Projects_en;
 use App\Models\Projects_ge;
 use App\Models\Projects_ru;
 use App\Models\ProjectsImg;
-use App\Models\Reviews;
-use App\Models\Reviews_en;
-use App\Models\Reviews_ge;
-use App\Models\Reviews_ru;
 use App\Models\Staff;
 use App\Models\Staff_en;
 use App\Models\Staff_ge;
@@ -46,6 +47,9 @@ class BullbuildersController extends Controller
     /** @var string  */
     const ROUTE_PROJECT     = 'bullbuilders.project';
 
+    /** @var string  */
+    const ROUTE_CHARITY     = 'bullbuilders.charity';
+
     /**
      * О нас
      *
@@ -57,10 +61,14 @@ class BullbuildersController extends Controller
         $arStaff = [];
 
         $obStaff = new Staff_ge();
+        $obCharity = new Charity_ge();
         if (session()->get('lang') == 'ru') {
             $obStaff = new Staff_ru();
+            $obCharity = new Charity_ru();
         } elseif (session()->get('lang') == 'en') {
             $obStaff = new Staff_en();
+            $obCharity = new Charity_en();
+
         }
 
         $arStaffMain = Staff::all();
@@ -77,9 +85,27 @@ class BullbuildersController extends Controller
                 'comment'       => $arInfoStaff['comment'],
             ];
         }
+
+        $arCharityMain = Charity::all();
+
+        foreach ($arCharityMain as $key => $charity) {
+            $arInfoCharity = $obCharity::all()->where('charity_id', $charity->id)->first();
+
+            $arCharity [$key] = [
+                'id'            => $charity->id,
+                'main_img'      => $charity->main_img,
+                'manager_phone' => $charity->manager_phone,
+                'date'          => $charity->date,
+                'name'          => $arInfoCharity['name'],
+                'manager'       => $arInfoCharity['manager'],
+                'title'         => $arInfoCharity['title'],
+                'description'   => $arInfoCharity['description'],
+            ];
+        }
         return view('bullbuilders.about' , [
                 'page'          => $page,
                 'arStaff'       => $arStaff,
+                'arCharity'     => $arCharity,
             ]
         );
     }
@@ -229,13 +255,13 @@ class BullbuildersController extends Controller
         foreach ($arProjectsMain as $key => $project) {
             $arInfo = $obProjects::all()->where('project_id', $project->id)->first();
             $arProjects [$key] = [
-                'id' => $project->id,
-                'status' => $project->status,
-                'main_img' => $project->main_img,
+                'id'            => $project->id,
+                'status'        => $project->status,
+                'main_img'      => $project->main_img,
                 'manager_phone' => $project->manager_phone,
-                'name' => $arInfo->name,
-                'manager' => $arInfo->manager,
-                'description' => $arInfo->description,
+                'name'          => $arInfo->name,
+                'manager'       => $arInfo->manager,
+                'description'   => $arInfo->description,
             ];
         }
 
@@ -284,13 +310,13 @@ class BullbuildersController extends Controller
         $arProjectInfo = $obProject::all()->where('project_id', $id)->first();
 
         $arProject = [
-            'status' => $arProjectMain['status'],
-            'main_img' => $arProjectMain['main_img'],
+            'status'        => $arProjectMain['status'],
+            'main_img'      => $arProjectMain['main_img'],
             'manager_phone' => $arProjectMain['manager_phone'],
-            'name' => $arProjectInfo['name'],
-            'manager' => $arProjectInfo['manager'],
-            'address' => $arProjectInfo['address'],
-            'description' => $arProjectInfo['description'],
+            'name'          => $arProjectInfo['name'],
+            'manager'       => $arProjectInfo['manager'],
+            'address'       => $arProjectInfo['address'],
+            'description'   => $arProjectInfo['description'],
         ];
 
         $page = $arProjectInfo['name'];
@@ -300,6 +326,52 @@ class BullbuildersController extends Controller
         return view('bullbuilders.project' , [
                 'page'          => $page,
                 'arProject'     => $arProject,
+                'arImg'         => $arImg,
+            ]
+        );
+    }
+
+    /**
+     * Страница Благотворительности
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|Factory|View
+     */
+    public function charity($id)
+    {
+        $page = '';
+        $arCharity = [];
+        $arImg = [];
+
+        $arCharityMain = Charity::all()->where('id', $id)->first();
+
+        $obCharity = new Charity_ge();
+        if (session()->get('lang') == 'ru') {
+            $obCharity = new Charity_ru();
+        } elseif (session()->get('lang') == 'en') {
+            $obCharity = new Charity_en();
+        }
+
+        $arCharityInfo = $obCharity::all()->where('charity_id', $id)->first();
+
+        $arCharity = [
+            'id'            => $arCharityMain['id'],
+            'date'          => $arCharityMain['date'],
+            'main_img'      => $arCharityMain['main_img'],
+            'manager_phone' => $arCharityMain['manager_phone'],
+            'name'          => $arCharityInfo['name'],
+            'manager'       => $arCharityInfo['manager'],
+            'title'         => $arCharityInfo['title'],
+            'description'   => $arCharityInfo['description'],
+        ];
+
+        $page = $arCharityInfo['name'];
+
+        $arImg = Charity_img::all()->where('charity_id', $id);
+
+        return view('bullbuilders.charity' , [
+                'page'          => $page,
+                'arCharity'     => $arCharity,
                 'arImg'         => $arImg,
             ]
         );

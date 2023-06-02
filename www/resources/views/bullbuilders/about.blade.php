@@ -129,6 +129,38 @@
         </div>
     </section>
 
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+                    <h2 class="mb-4 bg-primary">{{ __('admin.charity') }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex">
+                @foreach($arCharity as $charity)
+                    @include('bullbuilders.charitys', ['charity' => $charity])
+                @endforeach
+            </div>
+{{--            <div class="row mt-5">--}}
+{{--                <div class="col text-center">--}}
+{{--                    <div class="block-27">--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#">&lt;</a></li>--}}
+{{--                            <li class="active"><span>1</span></li>--}}
+{{--                            <li><a href="#">2</a></li>--}}
+{{--                            <li><a href="#">3</a></li>--}}
+{{--                            <li><a href="#">4</a></li>--}}
+{{--                            <li><a href="#">5</a></li>--}}
+{{--                            <li><a href="#">&gt;</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+        </div>
+    </section>
+
     <section class="ftco-section">
         <div class="container">
             <div class="row">
