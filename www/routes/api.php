@@ -19,6 +19,7 @@ use App\Http\Controllers\Api\ProjectsController;
 use App\Http\Controllers\Api\PartnersController;
 use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\SliderController;
+use App\Http\Controllers\Api\CharityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,11 @@ Route::group(
         Route::post('/slider/create',                    [SliderController::class, 'createSlider']          )->name(SliderController::ROUTE_CREATE_SLIDER);
         Route::post('/slider/update',                    [SliderController::class, 'updateSlider']          )->name(SliderController::ROUTE_UPDATE_SLIDER);
         Route::get ('/slider/delete/{id}',               [SliderController::class, 'deleteSlider']          )->name(SliderController::ROUTE_DELETE_SLIDER);
+        Route::post('/charity/create',                   [CharityController::class, 'createCharity']       )->name(CharityController::ROUTE_CREATE_CHARITY);
+        Route::post('/charity/update',                   [CharityController::class, 'updateCharity']       )->name(CharityController::ROUTE_UPDATE_CHARITY);
+        Route::get ('/charity/delete/{id}',              [CharityController::class, 'deleteCharity']       )->name(CharityController::ROUTE_DELETE_CHARITY);
+        Route::post('/charity/img/update/{id}',          [CharityController::class, 'updateCharityImg']    )->name(CharityController::ROUTE_UPDATE_CHARITY_IMG);
+        Route::get ('/charity/img/delete/{id}',          [CharityController::class, 'deleteCharityImg']    )->name(CharityController::ROUTE_DELETE_CHARITY_IMG);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

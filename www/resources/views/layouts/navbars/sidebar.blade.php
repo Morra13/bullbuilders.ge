@@ -119,6 +119,16 @@
                             <i class="fas fa-clone {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\SliderController::ROUTE_SLIDER ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.sliders') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\CharityController::ROUTE_CREATE_CHARITY ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\CharityController::ROUTE_CREATE_CHARITY) }}">
+                            <i class="ni ni-fat-add {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\CharityController::ROUTE_CREATE_CHARITY ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.create_charity') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\CharityController::ROUTE_CHARITY ? 'text-danger' : '' }}" href="{{ route(\App\Http\Controllers\CharityController::ROUTE_CHARITY) }}">
+                            <i class="fas fa-donate {{ Route::getCurrentRoute()->getName() == \App\Http\Controllers\CharityController::ROUTE_CHARITY ? 'text-danger' : 'text-primary' }}"></i> {{ __('admin.charity') }}
+                        </a>
+                    </li>
                 </ul>
             @endif
             <ul class="navbar-nav mb-md-3">
