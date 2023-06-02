@@ -13,8 +13,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property int id
  * @property Carbon created_at
  * @property Carbon updated_at
+ * @property string main_img
  * @property int charity_id
  * @property string name
+ * @property string email
  * @property string comment
  */
 class Charity_comment extends Model

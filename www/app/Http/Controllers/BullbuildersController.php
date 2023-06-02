@@ -59,6 +59,7 @@ class BullbuildersController extends Controller
     {
         $page = 'about';
         $arStaff = [];
+        $arCharity = [];
 
         $obStaff = new Staff_ge();
         $obCharity = new Charity_ge();
@@ -340,8 +341,8 @@ class BullbuildersController extends Controller
     public function charity($id)
     {
         $page = '';
-        $arCharity = [];
         $arImg = [];
+        $arCharity = [];
 
         $arCharityMain = Charity::all()->where('id', $id)->first();
 

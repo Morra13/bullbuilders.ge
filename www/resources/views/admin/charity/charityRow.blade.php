@@ -21,6 +21,11 @@
         {{$charity['date']}}
     </td>
     <td>
+        <a href="{{ route(\App\Http\Controllers\CharityController::ROUTE_COMMENT, $charity['id']) }}" class="mr-3">
+            <span> {{ __('admin.comment') }} </span>
+        </a>
+    </td>
+    <td>
         <a href="{{ route(\App\Http\Controllers\CharityController::ROUTE_UPDATE_CHARITY_IMG, $charity['id']) }}" class="mr-3">
             <span> {{ __('admin.more_img') }} </span>
         </a>

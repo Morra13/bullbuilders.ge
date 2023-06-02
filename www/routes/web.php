@@ -121,5 +121,6 @@ Route::group(
         Route::get('/charity',                [CharityController::class, 'charity']             )->name(CharityController::ROUTE_CHARITY);
         Route::get('/updateCharity/{id}',     [CharityController::class, 'updateCharity']       )->name(CharityController::ROUTE_UPDATE_CHARITY);
         Route::get('/updateCharityImg/{id}',  [CharityController::class, 'updateCharityImg']    )->name(CharityController::ROUTE_UPDATE_CHARITY_IMG);
+        Route::get('/comment/{id}',           [CharityController::class, 'comment']             )->name(CharityController::ROUTE_COMMENT);
     }
 );

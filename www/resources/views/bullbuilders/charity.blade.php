@@ -18,9 +18,9 @@
                     <h3 class="mb-5">6 Comments</h3>
                     <ul class="comment-list">
                         <li class="comment">
-                            <div class="vcard bio">
-                                <img src="images/person_1.jpg" alt="Image placeholder">
-                            </div>
+{{--                            <div class="vcard bio">--}}
+{{--                                <img src="images/person_1.jpg" alt="Image placeholder">--}}
+{{--                            </div>--}}
                             <div class="comment-body">
                                 <h3>John Doe</h3>
                                 <div class="meta">October 18, 2018 at 2:21pm</div>
@@ -29,35 +29,51 @@
                         </li>
                     </ul>
 
-                        <!-- END comment-list -->
-                    <div class="comment-form-wrap pt-5">
-                        <h3 class="mb-5">Leave a comment</h3>
-                        <form action="#" class="p-5 bg-light">
+                    <form method="post" action="{{ route(\App\Http\Controllers\Api\CharityController::ROUTE_CREATE_COMMENT) }}" autocomplete="off" enctype="multipart/form-data">
+                        @csrf
+                        @method('post')
+                        <div class="comment-form-wrap pt-5">
+                            <h3 class="mb-5">{{ __('admin.leave_comment') }}</h3>
                             <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" name="charity_id" value="{{$arCharity['id']}}" hidden>
+                                <label for="name">{{ __('admin.name') }}</label>
+                                <input
+                                    id="name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="{{ __('admin.name') }}"
+                                    class="form-control"
+                                    required
+                                >
                             </div>
                             <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
+                                <label for="email">{{ __('admin.email') }}</label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="{{ __('admin.email') }}"
+                                    class="form-control"
+                                    required
+                                >
                             </div>
                             <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
+                                <label for="comment">{{ __('admin.comment') }}</label>
+                                <textarea
+                                    id="comment"
+                                    name="comment"
+                                    cols="25" rows="7"
+                                    class="form-control"
+                                    placeholder="{{ __('admin.comment') }}"
+                                    required
+                                ></textarea>
                             </div>
-
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                            <div class="form-group text-center">
+                                <input type="submit" value="{{ __('admin.send') }}" class="btn py-3 px-4 btn-primary">
                             </div>
-                            <div class="form-group">
-                                <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
-                            </div>
-
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
-
             </div>
 
             <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">

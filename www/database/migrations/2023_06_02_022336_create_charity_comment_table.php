@@ -17,7 +17,9 @@ class CreateCharityCommentTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('charity_id');
+            $table->string('main_img')->nullable();
             $table->string('name');
+            $table->string('email')->unique();
             $table->longText('comment');
 
         });

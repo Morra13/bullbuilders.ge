@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Charity;
+use App\Models\Charity_comment;
 use App\Models\Charity_en;
 use App\Models\Charity_ge;
 use App\Models\Charity_img;
@@ -26,6 +27,12 @@ class CharityController extends Controller
 
     /** @var string  */
     const ROUTE_DELETE_CHARITY_IMG    = 'api.admin.deleteCharityImg';
+
+    /** @var string  */
+    const ROUTE_CREATE_COMMENT        = 'api.admin.createComment';
+
+    /** @var string  */
+    const ROUTE_DELETE_COMMENT        = 'api.admin.deleteComment';
 
     /**
      * Добавление новой благотворительности
@@ -209,6 +216,49 @@ class CharityController extends Controller
             unlink(storage_path('app/public/' . $obCharityImg->img));
         }
         $obCharityImg->delete();
+
+        return redirect()->back();
+    }
+
+    /**
+     * Создать коментарий
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function createComment(Request $request)
+    {
+        $obComment = new Charity_comment();
+
+        if (!empty($request->file())){
+            $fileName = time().'_'.$request->file('main_img')->getClientOriginalName();
+            $filePath = $request->file('main_img')->storeAs('/uploads', $fileName , 'public');
+            $obComment->main_img = $filePath;
+        }
+
+        $obComment->charity_id  = $request->get('charity_id');
+        $obComment->main_img    = $request->get('main_img');
+        $obComment->name        = $request->get('name');
+        $obComment->email       = $request->get('email');
+        $obComment->comment     = $request->get('comment');
+        $obComment->save();
+
+        return redirect()->back();
+    }
+
+    /**
+     * Удаление коментария
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteComment($id)
+    {
+        $obComment = (new Charity_comment())->where('id', $id)->first();
+        if (!empty($obComment->img)) {
+            unlink(storage_path('app/public/' . $obComment->img));
+        }
+        $obComment->delete();
 
         return redirect()->back();
     }

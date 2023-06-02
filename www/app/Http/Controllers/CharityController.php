@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Charity;
+use App\Models\Charity_comment;
 use App\Models\Charity_en;
 use App\Models\Charity_ge;
 use App\Models\Charity_ru;
@@ -22,6 +23,9 @@ class CharityController extends Controller
 
     /** @var string  */
     const ROUTE_UPDATE_CHARITY_IMG    = 'admin.charity.updateCharityImg';
+
+    /** @var string  */
+    const ROUTE_COMMENT               = 'admin.charity.comment';
 
     /**
      * Страница создать благотворительность
@@ -169,5 +173,46 @@ class CharityController extends Controller
         );
     }
 
+    /**
+     * Коментарии
+     *
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function comment(int $id)
+    {
+        $arComment = [];
+
+        $iCount = (new Charity_comment())
+            ->where('charity_id', $id)
+            ->get()
+            ->count();
+
+        $iPage = $_REQUEST['page'] ?? 1;
+
+        if (($iPage - 1) * self::TABLE_ROWS_LIMIT > $iCount) {
+            $iPage = 1;
+        }
+
+        $arComment = (new Charity_comment())
+            ->where('charity_id', $id)
+            ->skip(($iPage - 1) * self::TABLE_ROWS_LIMIT)
+            ->take(self::TABLE_ROWS_LIMIT)
+            ->orderByDesc('created_at')
+            ->get();
+
+        return view(
+            'admin.charity.comment',
+            [
+                'arComment'       => $arComment,
+                'pagination'    => [
+                    'total'       => $iCount,
+                    'limit'       => self::TABLE_ROWS_LIMIT,
+                    'page_count'  => ceil($iCount / self::TABLE_ROWS_LIMIT),
+                    'page'        => $iPage,
+                ]
+            ]
+        );
+    }
 }
 

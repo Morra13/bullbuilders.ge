@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('admin.charity') ])
+@extends('layouts.app', ['title' => __('admin.comment') ])
 
 @section('content')
     <div class="header pb-8 pt-5" style="background-image: url(../../../argon/img/theme/example-4.png); background-size: cover; background-position: center top;">
@@ -7,7 +7,7 @@
             <div class="header-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-white">{{ __('admin.charity') }}</h1>
+                        <h1 class="text-white">{{ __('admin.comment') }}</h1>
                         <p class="text-white mt-0 mb-5"></p>
                     </div>
                 </div>
@@ -30,17 +30,15 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.name') }}</th>
-                                <th scope="col" class="sort" data-sort="name">{{ __('admin.manager') }}</th>
-                                <th scope="col" class="sort" data-sort="name">{{ __('admin.manager_phone') }}</th>
-                                <th scope="col" class="sort" data-sort="name">{{ __('admin.date') }}</th>
+                                <th scope="col" class="sort" data-sort="name">{{ __('admin.email') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.comment') }}</th>
-                                <th scope="col" class="sort" data-sort="name">{{ __('admin.more_img') }}</th>
+                                <th scope="col" class="sort" data-sort="name">{{ __('admin.date') }}</th>
                                 <th scope="col" class="sort" data-sort="name">{{ __('admin.delete') }}</th>
                             </tr>
                             </thead>
                             <tbody class="list">
-                            @foreach ($arCharity as $charity)
-                                @include('admin.charity.charityRow', ['charity' => $charity])
+                            @foreach ($arComment as $comment)
+                                @include('admin.charity.commentRow', ['comment' => $comment])
                             @endforeach
                             </tbody>
                         </table>
