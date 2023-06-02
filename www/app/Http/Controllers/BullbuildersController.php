@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Charity;
+use App\Models\Charity_comment;
 use App\Models\Charity_en;
 use App\Models\Charity_ge;
 use App\Models\Charity_img;
@@ -343,6 +344,9 @@ class BullbuildersController extends Controller
         $page = '';
         $arImg = [];
         $arCharity = [];
+        $arComment = [];
+
+        $arComment = (new Charity_comment())->where('charity_id', $id)->get();
 
         $arCharityMain = Charity::all()->where('id', $id)->first();
 
@@ -374,6 +378,7 @@ class BullbuildersController extends Controller
                 'page'          => $page,
                 'arCharity'     => $arCharity,
                 'arImg'         => $arImg,
+                'arComment'     => $arComment,
             ]
         );
     }

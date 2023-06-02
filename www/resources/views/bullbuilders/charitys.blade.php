@@ -15,11 +15,6 @@
                                         {{ $charity['manager'] }}
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_CHARITY, $charity['id']) }}" class="meta-chat">
-                                        <span class="icon-chat"></span> 0
-                                    </a>
-                                </div>
                             </div>
                             <h3 class="heading">
                                 <a href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_CHARITY, $charity['id']) }}">

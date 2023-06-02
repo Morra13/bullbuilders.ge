@@ -15,18 +15,20 @@
                     <span> {{ $arCharity['description'] }} </span>
                 </div>
                 <div class="pt-5 mt-5">
-                    <h3 class="mb-5">6 Comments</h3>
+                    <h3 class="mb-5">{{__('admin.comment') .'     : '. $arComment->count()}}</h3>
                     <ul class="comment-list">
-                        <li class="comment">
-{{--                            <div class="vcard bio">--}}
-{{--                                <img src="images/person_1.jpg" alt="Image placeholder">--}}
-{{--                            </div>--}}
-                            <div class="comment-body">
-                                <h3>John Doe</h3>
-                                <div class="meta">October 18, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            </div>
-                        </li>
+                        @foreach($arComment as $comment)
+                            <li class="comment">
+{{--                                    <div class="vcard bio">--}}
+{{--                                        <img src="images/person_1.jpg" alt="Image placeholder">--}}
+{{--                                    </div>--}}
+                                    <div class="comment-body">
+                                        <h3>{{$comment['name']}}</h3>
+                                        <div class="meta">{{$comment['created_at']}}</div>
+                                        <p>{{ $comment['comment'] }}</p>
+                                    </div>
+                            </li>
+                        @endforeach
                     </ul>
 
                     <form method="post" action="{{ route(\App\Http\Controllers\Api\CharityController::ROUTE_CREATE_COMMENT) }}" autocomplete="off" enctype="multipart/form-data">
