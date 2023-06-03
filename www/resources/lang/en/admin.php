@@ -40,7 +40,7 @@ return [
     'manager'               => 'Manager',
     'address'               => 'Address',
     'completed'             => 'Completed',
-    'incomplete'            => 'incomplete',
+    'incomplete'            => 'Current',
     'date_begin'            => 'Date begin project',
     'date_end'              => 'Date end project',
     'more_img'              => 'More img',
