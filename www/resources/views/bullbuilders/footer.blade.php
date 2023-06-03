@@ -43,18 +43,20 @@
             </div>
             <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
                 <h2 class="footer-heading">{{__('nav.contact')}}</h2>
-                <form action="#" class="contact-form">
+                <form method="post" action="{{ route(\App\Http\Controllers\Api\MailController::ROUTE_SEND_MAIL) }}" id="contactForm" name="contactForm" class="contactForm">
+                    @csrf
+                    @method('post')
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="{{__('contact.name')}}">
+                        <input type="text" name="name" class="form-control" placeholder="{{__('contact.name')}}" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="{{__('contact.email')}}">
+                        <input type="email" name="email" class="form-control" placeholder="{{__('contact.email')}}" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="{{__('contact.theame')}}">
+                        <input type="text" name="theme" class="form-control" placeholder="{{__('contact.theme')}}" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="{{__('contact.message')}}"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="{{__('contact.message')}}" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control submit px-3">{{__('contact.send_message')}}</button>

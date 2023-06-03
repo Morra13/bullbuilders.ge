@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\PartnersController;
 use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\CharityController;
+use App\Http\Controllers\Api\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,8 @@ Route::group(
         Route::get ('/charity/img/delete/{id}',          [CharityController::class, 'deleteCharityImg']     )->name(CharityController::ROUTE_DELETE_CHARITY_IMG);
         Route::post('/create/comment',                   [CharityController::class, 'createComment']        )->name(CharityController::ROUTE_CREATE_COMMENT);
         Route::get ('/delete/comment/{id}',              [CharityController::class, 'deleteComment']        )->name(CharityController::ROUTE_DELETE_COMMENT);
+
+        Route::post('/sendMail',                         [MailController::class, 'sendMail']                )->name(MailController::ROUTE_SEND_MAIL);
 
         Route::post('/user/update',                      [UserController::class, 'update']          )->name(UserController::ROUTE_UPDATE);
         Route::post('/user/role',                        [UserController::class, 'role']            )->name(UserController::ROUTE_ROLE);

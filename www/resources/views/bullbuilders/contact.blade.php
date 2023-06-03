@@ -21,30 +21,61 @@
                             <div class="col-md-12">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h3 class="mb-4">{{__('nav.contact')}}</h3>
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <form method="post" action="{{ route(\App\Http\Controllers\Api\MailController::ROUTE_SEND_MAIL) }}" id="contactForm" name="contactForm" class="contactForm">
+                                        @csrf
+                                        @method('post')
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="name">{{__('contact.name')}}</label>
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="{{__('contact.name')}}">
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="name"
+                                                        id="name"
+                                                        placeholder="{{__('contact.name')}}"
+                                                        required
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="email">{{__('contact.email')}}</label>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="{{__('contact.email')}}">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        name="email"
+                                                        id="email"
+                                                        placeholder="{{__('contact.email')}}"
+                                                        required
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="subject">{{__('contact.theme')}}</label>
-                                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="{{__('contact.theme')}}">
+                                                    <label class="label" for="theme">{{__('contact.theme')}}</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="theme"
+                                                        id="theme"
+                                                        placeholder="{{__('contact.theme')}}"
+                                                        required
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="#">{{__('contact.message')}}</label>
-                                                    <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="{{__('contact.message')}}"></textarea>
+                                                    <textarea
+                                                        name="message"
+                                                        class="form-control"
+                                                        id="message"
+                                                        cols="30"
+                                                        rows="4"
+                                                        placeholder="{{__('contact.message')}}"
+                                                        required
+                                                    ></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
