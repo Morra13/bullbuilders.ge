@@ -12,10 +12,10 @@
         </div>
     </th>
     <td>
-        <span>{{ $slider['subtitle_' . session()->get('lang')] }}</span>
+        <span>{{ $slider['subtitle_' . (session()->get('lang') ?? 'ge')] }}</span>
     </td>
     <td>
-        {{$slider['title_' . session()->get('lang')]}}
+        {{$slider['title_' . (session()->get('lang')  ?? 'ge')]}}
     </td>
     <td>
         <a href="{{route(\App\Http\Controllers\Api\SliderController::ROUTE_DELETE_SLIDER, $slider['id'])}}" class="h3 btn-outline-danger">{{__('admin.delete')}}</a>
