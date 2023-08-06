@@ -49,17 +49,17 @@
                     <a class="nav-link" href="{{ route(\App\Http\Controllers\BullbuildersController::ROUTE_CONTACT) }}"> {{__( 'nav.contact' )}} </a>
                 </li>
                     <ul>
-                        <li class="nav-item">
+                        <li class="nav-item nav-reset">
                             <a href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ge') }}">
                                 <span class="flag-icon flag-icon-ge"></span> Geo
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-reset">
                             <a href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'ru') }}">
                                 <span class="flag-icon flag-icon-ru"></span> Ru
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item nav-reset">
                             <a href="{{ route(\App\Http\Controllers\PublicController::ROUTE_CHANGE_LANG , 'en') }}">
                                 <span class="flag-icon flag-icon-us"></span> Eng
                             </a>

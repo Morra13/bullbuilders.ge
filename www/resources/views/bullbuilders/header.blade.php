@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/icomoon.css">
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/style.css">
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/flag.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/myStyle.css">
     </head>
 <body>
 
