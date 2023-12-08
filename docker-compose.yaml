@@ -16,18 +16,6 @@ services:
             - "./config/php/app.crontab:/etc/cron.d/app.crontab"
             - "./config/php/local.ini:/usr/local/etc/php/conf.d/local.ini"
         command: [ "/bin/bash", "/usr/local/bin/start" ]
-    # PDF
-#    pdf:
-#        build: ./config/pdf
-#        container_name: CORE_PDF
-#        restart: unless-stopped
-#        tty: true
-#        networks:
-#            - app-network
-#        volumes:
-#            - ~/.ssh:/var/www/.ssh
-#            - "./pdf:/var/pdf"
-#            - "./config/pdf/local.ini:/usr/local/etc/php/conf.d/local.ini"
     # Nginx Service
     webserver:
         image: nginx:alpine
