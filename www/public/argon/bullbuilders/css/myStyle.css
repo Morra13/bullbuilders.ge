@@ -5,3 +5,10 @@
 .nav-lang {
     margin-right: auto;
 }
+
+.slider-title {
+    padding-bottom: 10px;
+    backdrop-filter: blur(1.5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), 0 16px 28px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
