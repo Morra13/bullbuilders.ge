@@ -17,11 +17,12 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\ReviewsController::ROUTE_CREATE_REVIEWS) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                @include('admin.reviews.createReviewsRow')
                 <?
-                $arLang = ['ge', 'ru', 'en'];
+                $arLang = ['ru', 'en'];
                 ?>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.reviews.createReviewsRow', ['lang' => $lang, 'key' => $key,])
+                @foreach($arLang as $lang)
+                    @include('admin.reviews.createReviewsRowNoRequire', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">

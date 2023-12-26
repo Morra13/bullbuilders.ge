@@ -50,17 +50,17 @@ class ReviewsController extends Controller
             $obReviewsGe->save();
 
             $obReviewsRu->review_id   = $iReviewsId;
-            $obReviewsRu->name        = $request->get('name_ru');
-            $obReviewsRu->surname     = $request->get('surname_ru');
-            $obReviewsRu->position    = $request->get('position_ru');
-            $obReviewsRu->comment     = $request->get('comment_ru');
+            $obReviewsRu->name        = $request->get('name_ru') ?? $request->get('name_ge');
+            $obReviewsRu->surname     = $request->get('surname_ru') ?? $request->get('surname_ge');
+            $obReviewsRu->position    = $request->get('position_ru') ?? $request->get('position_ge');
+            $obReviewsRu->comment     = $request->get('comment_ru') ?? $request->get('comment_ge');
             $obReviewsRu->save();
 
             $obReviewsEn->review_id   = $iReviewsId;
-            $obReviewsEn->name        = $request->get('name_en');
-            $obReviewsEn->surname     = $request->get('surname_en');
-            $obReviewsEn->position    = $request->get('position_en');
-            $obReviewsEn->comment     = $request->get('comment_en');
+            $obReviewsEn->name        = $request->get('name_en') ?? $request->get('name_ge');
+            $obReviewsEn->surname     = $request->get('surname_en') ?? $request->get('surname_ge');
+            $obReviewsEn->position    = $request->get('position_en') ?? $request->get('position_ge');
+            $obReviewsEn->comment     = $request->get('comment_en') ?? $request->get('comment_ge');
             $obReviewsEn->save();
         }
 
