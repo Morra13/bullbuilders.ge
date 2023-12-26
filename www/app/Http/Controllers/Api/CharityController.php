@@ -66,17 +66,17 @@ class CharityController extends Controller
             $obCharityGe->save();
 
             $obCharityRu->charity_id    = $iProductId;
-            $obCharityRu->name          = $request->get('name_ru');
-            $obCharityRu->manager       = $request->get('manager_ru');
-            $obCharityRu->title         = $request->get('title_ru');
-            $obCharityRu->description   = $request->get('description_ru');
+            $obCharityRu->name          = $request->get('name_ru') ?? $request->get('name_ge');
+            $obCharityRu->manager       = $request->get('manager_ru') ?? $request->get('manager_ge');
+            $obCharityRu->title         = $request->get('title_ru') ?? $request->get('title_ge');
+            $obCharityRu->description   = $request->get('description_ru') ?? $request->get('description_ge');
             $obCharityRu->save();
 
             $obCharityEn->charity_id    = $iProductId;
-            $obCharityEn->name          = $request->get('name_en');
-            $obCharityEn->manager       = $request->get('manager_en');
-            $obCharityEn->title         = $request->get('title_en');
-            $obCharityEn->description   = $request->get('description_en');
+            $obCharityEn->name          = $request->get('name_en') ?? $request->get('name_ge');
+            $obCharityEn->manager       = $request->get('manager_en') ?? $request->get('manager_ge');
+            $obCharityEn->title         = $request->get('title_en') ?? $request->get('title_ge');
+            $obCharityEn->description   = $request->get('description_en') ?? $request->get('description_ge');
             $obCharityEn->save();
         }
 

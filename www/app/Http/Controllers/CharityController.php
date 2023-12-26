@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class CharityController extends Controller
 {
     /** @var string  */
-    const ROUTE_CREATE_CHARITY        = 'admin.charity.pageCreateCharity';
+    const ROUTE_CREATE_CHARITY        = 'admin.charity.createCharity';
 
     /** @var string  */
     const ROUTE_CHARITY               = 'admin.charity.charity';
@@ -32,9 +32,9 @@ class CharityController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function pageCreateCharity()
+    public function createCharity()
     {
-        return view('admin.charity.pageCreateCharity');
+        return view('admin.charity.createCharity');
     }
 
     /**

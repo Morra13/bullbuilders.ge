@@ -17,9 +17,6 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\CharityController::ROUTE_CREATE_CHARITY) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
-                <?
-                $arLang = ['ge', 'ru', 'en'];
-                ?>
                 <div class="col-xl-3 order-xl-1">
                     @csrf
                     @method('post')
@@ -75,8 +72,12 @@
                         </div>
                     </div>
                 </div>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.charity.createCharityRow', ['lang' => $lang, 'key' => $key,])
+                @include('admin.charity.createCharityRow')
+                <?
+                $arLang = ['ru', 'en'];
+                ?>
+                @foreach($arLang as $lang)
+                    @include('admin.charity.createCharityRowNoRequire', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">

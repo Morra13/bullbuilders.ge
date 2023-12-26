@@ -117,7 +117,7 @@ Route::group(
         Route::get('/createSlider',           [SliderController::class, 'createSlider']         )->name(SliderController::ROUTE_CREATE_SLIDER);
         Route::get('/slider',                 [SliderController::class, 'slider']               )->name(SliderController::ROUTE_SLIDER);
         Route::get('/updateSlider/{id}',      [SliderController::class, 'updateSlider']         )->name(SliderController::ROUTE_UPDATE_SLIDER);
-        Route::get('/pageCreateCharity',      [CharityController::class, 'pageCreateCharity']   )->name(CharityController::ROUTE_CREATE_CHARITY);
+        Route::get('/createCharity',          [CharityController::class, 'createCharity']       )->name(CharityController::ROUTE_CREATE_CHARITY);
         Route::get('/charity',                [CharityController::class, 'charity']             )->name(CharityController::ROUTE_CHARITY);
         Route::get('/updateCharity/{id}',     [CharityController::class, 'updateCharity']       )->name(CharityController::ROUTE_UPDATE_CHARITY);
         Route::get('/updateCharityImg/{id}',  [CharityController::class, 'updateCharityImg']    )->name(CharityController::ROUTE_UPDATE_CHARITY_IMG);
