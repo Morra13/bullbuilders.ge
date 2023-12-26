@@ -96,7 +96,7 @@
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>{{__('contact.address')}} : </span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                        <p><span>{{__('contact.address')}} : </span> </p>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                         <span class="fa fa-phone"></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>{{__('contact.phone')}} : </span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                        <p><span>{{__('contact.phone')}} : </span> <a href="tel://995595292444">+995-595-29-24-44</a></p>
                                     </div>
                                 </div>
                             </div>

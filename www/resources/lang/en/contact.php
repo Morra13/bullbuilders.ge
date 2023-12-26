@@ -7,6 +7,6 @@ return [
     'message'       => 'Message',
     'send_message'  => 'Send message',
     'address'       => 'Address',
-    'Phone'         => 'Phone',
-    'Website'       => 'Website',
+    'phone'         => 'Phone',
+    'website'       => 'Website',
 ];
