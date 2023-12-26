@@ -50,17 +50,17 @@ class StaffController extends Controller
             $obStaffGe->save();
 
             $obStaffRu->staff_id    = $iStaffId;
-            $obStaffRu->name        = $request->get('name_ru');
-            $obStaffRu->surname     = $request->get('surname_ru');
-            $obStaffRu->position    = $request->get('position_ru');
-            $obStaffRu->comment     = $request->get('comment_ru');
+            $obStaffRu->name        = $request->get('name_ru') ?? $request->get('name_ge');
+            $obStaffRu->surname     = $request->get('surname_ru') ?? $request->get('surname_ge');
+            $obStaffRu->position    = $request->get('position_ru') ?? $request->get('position_ge');
+            $obStaffRu->comment     = $request->get('comment_ru') ?? $request->get('comment_ge');
             $obStaffRu->save();
 
             $obStaffEn->staff_id    = $iStaffId;
-            $obStaffEn->name        = $request->get('name_en');
-            $obStaffEn->surname     = $request->get('surname_en');
-            $obStaffEn->position    = $request->get('position_en');
-            $obStaffEn->comment     = $request->get('comment_en');
+            $obStaffEn->name        = $request->get('name_en') ?? $request->get('name_ge');
+            $obStaffEn->surname     = $request->get('surname_en') ?? $request->get('surname_ge');
+            $obStaffEn->position    = $request->get('position_en') ?? $request->get('position_ge');
+            $obStaffEn->comment     = $request->get('comment_en') ?? $request->get('comment_ge');
             $obStaffEn->save();
         }
 

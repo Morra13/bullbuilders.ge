@@ -17,11 +17,12 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\StaffController::ROUTE_CREATE_STAFF) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                @include('admin.staff.createStaffRow')
                 <?
-                $arLang = ['ge', 'ru', 'en'];
+                $arLang = ['ru', 'en'];
                 ?>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.staff.createStaffRow', ['lang' => $lang, 'key' => $key,])
+                @foreach($arLang as $lang)
+                    @include('admin.staff.createStaffRowNoRequired', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
