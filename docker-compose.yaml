@@ -56,10 +56,10 @@ services:
 
 #Docker Networks
 networks:
-  app-network:
-    driver: bridge
+    app-network:
+        driver: bridge
 
 #Docker Volumes
 volumes:
-  dbdata:
-    driver: local
+    dbdata:
+        driver: local
