@@ -49,15 +49,15 @@ class PartnersController extends Controller
             $obPartnerGe->save();
 
             $obPartnerRu->partner_id    = $iPartnerId;
-            $obPartnerRu->name          = $request->get('name_ru');
-            $obPartnerRu->title         = $request->get('title_ru');
-            $obPartnerRu->description   = $request->get('description_ru');
+            $obPartnerRu->name          = $request->get('name_ru') ?? $request->get('name_ge');
+            $obPartnerRu->title         = $request->get('title_ru') ?? $request->get('title_ge');
+            $obPartnerRu->description   = $request->get('description_ru') ?? $request->get('description_ge');
             $obPartnerRu->save();
 
             $obPartnerEn->partner_id    = $iPartnerId;
-            $obPartnerEn->name          = $request->get('name_en');
-            $obPartnerEn->title         = $request->get('title_en');
-            $obPartnerEn->description   = $request->get('description_en');
+            $obPartnerEn->name          = $request->get('name_en') ?? $request->get('name_ge');
+            $obPartnerEn->title         = $request->get('title_en') ?? $request->get('title_ge');
+            $obPartnerEn->description   = $request->get('description_en') ?? $request->get('description_ge');
             $obPartnerEn->save();
         }
 

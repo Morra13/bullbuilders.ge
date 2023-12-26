@@ -17,11 +17,12 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\PartnersController::ROUTE_CREATE_PARTNER) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                @include('admin.partners.createPartnerRow')
                 <?
-                $arLang = ['ge', 'ru', 'en'];
+                $arLang = ['ru', 'en'];
                 ?>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.partners.createPartnerRow', ['lang' => $lang, 'key' => $key,])
+                @foreach($arLang as $lang)
+                    @include('admin.partners.createPartnerRowNoRequire', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
