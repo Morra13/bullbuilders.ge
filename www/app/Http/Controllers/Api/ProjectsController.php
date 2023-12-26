@@ -62,17 +62,17 @@ class ProjectsController extends Controller
             $obProjectsGe->save();
 
             $obProjectsRu->project_id   = $iProjectId;
-            $obProjectsRu->name         = $request->get('name_ru');
-            $obProjectsRu->manager      = $request->get('manager_ru');
-            $obProjectsRu->address      = $request->get('address_ru');
-            $obProjectsRu->description  = $request->get('description_ru');
+            $obProjectsRu->name         = $request->get('name_ru') ?? $request->get('name_ge');
+            $obProjectsRu->manager      = $request->get('manager_ru') ?? $request->get('manager_ge');
+            $obProjectsRu->address      = $request->get('address_ru') ?? $request->get('address_ge');
+            $obProjectsRu->description  = $request->get('description_ru') ?? $request->get('description_ge');
             $obProjectsRu->save();
 
             $obProjectsEn->project_id   = $iProjectId;
-            $obProjectsEn->name         = $request->get('name_ru');
-            $obProjectsEn->manager      = $request->get('manager_ru');
-            $obProjectsEn->address      = $request->get('address_ru');
-            $obProjectsEn->description  = $request->get('description_ru');
+            $obProjectsEn->name         = $request->get('name_ru') ?? $request->get('name_ge');
+            $obProjectsEn->manager      = $request->get('manager_ru') ?? $request->get('manager_ge');
+            $obProjectsEn->address      = $request->get('address_ru') ?? $request->get('address_ge');
+            $obProjectsEn->description  = $request->get('description_ru') ?? $request->get('description_ge');
             $obProjectsEn->save();
         }
 
