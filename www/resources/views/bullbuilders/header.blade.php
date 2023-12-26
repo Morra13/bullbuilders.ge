@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $title ?? config('app.name', 'Argon Dashboard') }}</title>`
+        <title>{{ $title ?? config('app.name', 'Argon Dashboard') }}</title>
 
         <link type="image/png" sizes="16x16" rel="icon" href="{{ asset('argon') }}/img/favicon/r16.png">
         <link type="image/png" sizes="32x32" rel="icon" href={{ asset('argon') }}/img/favicon/r32.png">
@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/icomoon.css">
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/style.css">
         <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/flag.css">
-        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/myStyle.css">
+        <link rel="stylesheet" href="{{ asset('argon') }}/bullbuilders/css/myStyle.css?{{time()}}">
     </head>
 <body>
 
