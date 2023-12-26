@@ -17,11 +17,12 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\SliderController::ROUTE_CREATE_SLIDER) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                @include('admin.slider.createSliderRow')
                 <?
-                $arLang = ['ge', 'ru', 'en'];
+                $arLang = ['ru', 'en'];
                 ?>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.slider.createSliderRow', ['lang' => $lang, 'key' => $key,])
+                @foreach($arLang as $lang)
+                    @include('admin.slider.createSliderRowNoRequire', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">

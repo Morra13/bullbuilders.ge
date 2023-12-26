@@ -34,10 +34,10 @@ class SliderController extends Controller
         }
         $obSlider->subtitle_ge  = $request->get('subtitle_ge');
         $obSlider->title_ge     = $request->get('title_ge');
-        $obSlider->subtitle_ru  = $request->get('subtitle_ru');
-        $obSlider->title_ru     = $request->get('title_ru');
-        $obSlider->subtitle_en  = $request->get('subtitle_en');
-        $obSlider->title_en     = $request->get('title_en');
+        $obSlider->subtitle_ru  = $request->get('subtitle_ru') ?? $request->get('subtitle_ge');
+        $obSlider->title_ru     = $request->get('title_ru') ?? $request->get('title_ge');
+        $obSlider->subtitle_en  = $request->get('subtitle_en') ?? $request->get('subtitle_ge');
+        $obSlider->title_en     = $request->get('title_en') ?? $request->get('title_ge');
         $obSlider->save();
 
         return redirect()->route(\App\Http\Controllers\SliderController::ROUTE_CREATE_SLIDER);
