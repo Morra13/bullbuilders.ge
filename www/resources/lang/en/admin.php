@@ -9,7 +9,7 @@ return [
     'create'                => 'Create',
     'users'                 => 'Users',
     'all'                   => 'All',
-    'creator'               => 'Creator',
+    'creator'               => 'Staff',
     'admin'                 => 'Admin',
     'role'                  => 'Role',
     'email'                 => 'Email',
