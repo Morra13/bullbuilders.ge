@@ -50,15 +50,15 @@ class ProductsController extends Controller
             $obProductGe->save();
 
             $obProductRu->product_id    = $iProductId;
-            $obProductRu->name          = $request->get('name_ru');
-            $obProductRu->title         = $request->get('title_ru');
-            $obProductRu->description   = $request->get('description_ru');
+            $obProductRu->name          = $request->get('name_ru') ?? $request->get('name_ge');
+            $obProductRu->title         = $request->get('title_ru') ?? $request->get('title_ge');
+            $obProductRu->description   = $request->get('description_ru') ?? $request->get('description_ge');
             $obProductRu->save();
 
             $obProductEn->product_id    = $iProductId;
-            $obProductEn->name          = $request->get('name_en');
-            $obProductEn->title         = $request->get('title_en');
-            $obProductEn->description   = $request->get('description_en');
+            $obProductEn->name          = $request->get('name_en') ?? $request->get('name_ge');
+            $obProductEn->title         = $request->get('title_en') ?? $request->get('title_ge');
+            $obProductEn->description   = $request->get('description_en') ?? $request->get('description_ge');
             $obProductEn->save();
         }
 

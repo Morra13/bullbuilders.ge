@@ -17,11 +17,12 @@
     <form method="post" action="{{ route(\App\Http\Controllers\Api\ProductsController::ROUTE_CREATE_PRODUCT) }}" autocomplete="off" enctype="multipart/form-data">
         <div class="container-fluid mt--4">
             <div class="row">
+                @include('admin.products.createProductRow')
                 <?
-                $arLang = ['ge', 'ru', 'en'];
+                $arLang = ['ru', 'en'];
                 ?>
-                @foreach($arLang as $key => $lang)
-                    @include('admin.products.createProductRow', ['lang' => $lang, 'key' => $key,])
+                @foreach($arLang as $lang)
+                    @include('admin.products.createProductRowNoRequire', ['lang' => $lang])
                 @endforeach
                 <div class="col-xl-12 order-xl-4">
                     <div class="text-center">
