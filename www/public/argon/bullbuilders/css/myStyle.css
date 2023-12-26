@@ -1,3 +1,7 @@
 .nav-reset {
     list-style: none;
 }
+
+.nav-lang {
+    margin-right: auto;
+}
