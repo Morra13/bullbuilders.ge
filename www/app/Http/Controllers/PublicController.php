@@ -59,13 +59,7 @@ class PublicController extends Controller
         $obSlider = (new Slider())->all();
 
         foreach ($obSlider as $slider) {
-            if (session()->get('lang') == 'ge')
-                $arSlider [] = [
-                    'main_img'  => $slider['main_img'],
-                    'title'     => $slider['title_ge'],
-                    'subtitle'  => $slider['subtitle_ge'],
-                ];
-            elseif (session()->get('lang') == 'ru') {
+            if (session()->get('lang') == 'ru') {
                 $arSlider [] = [
                     'main_img'  => $slider['main_img'],
                     'title'     => $slider['title_ru'],
@@ -76,6 +70,12 @@ class PublicController extends Controller
                     'main_img'  => $slider['main_img'],
                     'title'     => $slider['title_en'],
                     'subtitle'  => $slider['subtitle_en'],
+                ];
+            } else {
+                $arSlider [] = [
+                    'main_img'  => $slider['main_img'],
+                    'title'     => $slider['title_ge'],
+                    'subtitle'  => $slider['subtitle_ge'],
                 ];
             }
         }
