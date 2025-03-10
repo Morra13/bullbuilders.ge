@@ -1,7 +1,10 @@
-FROM php:7.3-fpm
+FROM php:8.0-fpm
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
+    apt-utils \
+    libpq-dev \
+    zip unzip \
     build-essential \
     mariadb-client \
     libpng-dev \
@@ -15,14 +18,21 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     nano \
-    cron
+    cron \
+    libonig-dev \
+    git && \
+    docker-php-ext-install pdo_mysql && \
+          docker-php-ext-install bcmath && \
+          docker-php-ext-install gd && \
+          docker-php-ext-install zip && \
+          apt-get clean && \
+          rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
 
 # Install composer
